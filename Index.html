@@ -1,0 +1,1891 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Online MBA — Modern Landing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Slick CSS -->
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgYtWlHk38nJNmPR9U1FVLtZL1YI7Di5urN6pN1Nsx3Rp3XIan+FJxux1DPZWS9Yuk3IYZxZ8YKw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+
+    <style>
+        /* *{
+            border: 1px solid red;
+        } */
+        p {
+            font-size: 18px !important;
+        }
+
+        :root {
+            --brand: rgb(124, 10, 2);
+            --soft: #f6f9fc;
+            --muted: #6c757d;
+            --radius: 14px;
+            --card-shadow: 0 10px 30px rgba(10, 30, 60, 0.06);
+        }
+
+        body {
+            font-family: "Poppins";
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+            color: #0d1b2a;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden !important;
+        }
+
+
+        /* Program cards */
+        .program-card {
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform .36s cubic-bezier(.12, .7, .2, 1), box-shadow .36s;
+            background: #fff;
+            border: 1px solid rgba(10, 30, 60, 0.03);
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 50px rgba(10, 30, 60, 0.06);
+        }
+
+        /* faculty */
+        .faculty-img {
+            width: 72px;
+            height: 72px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid #fff;
+            box-shadow: 0 6px 22px rgba(10, 30, 60, 0.06);
+        }
+
+        /* Testimonials */
+        .testimonial {
+            background: linear-gradient(180deg, #ffffff, #fbfdff);
+            border-radius: 14px;
+            padding: 18px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        /* FAQ */
+        .faq .accordion-button {
+            border-radius: 12px;
+            margin-bottom: 8px;
+            background: #fff;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(12, 30, 60, 0.04);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px 0;
+            background: #021026;
+            color: #cfe8ff;
+        }
+
+        /* ---------------------------
+       CUSTOM BUTTONS (two different)
+       Brochure (outline with border sweep)
+       Apply (filled with shine wipe)
+       --------------------------- */
+        .btn-brochure {
+            position: relative;
+            overflow: hidden;
+            border-radius: 50px;
+            padding: 8px 22px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            transition: all .28s ease;
+            background: transparent;
+            border: 2px solid var(--brand);
+            color: var(--brand);
+            --btn-pad-y: 8px;
+        }
+
+        /* Outline button sweep - subtle line from center */
+        .btn-brochure::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 3px;
+            left: 50%;
+            bottom: 6px;
+            transform: translateX(-50%);
+            background: var(--brand);
+            border-radius: 8px;
+            transition: width .36s cubic-bezier(.2, .9, .25, 1);
+            opacity: 0.95;
+        }
+
+        .btn-brochure:hover::after {
+            width: 78%;
+        }
+
+        .btn-brochure:focus {
+            box-shadow: 0 8px 28px rgba(0, 58, 115, 0.06);
+            outline: none;
+        }
+
+        /* Apply button (filled) */
+        .btn-apply {
+            position: relative;
+            overflow: hidden;
+            border-radius: 50px;
+            padding: 9px 24px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #fff;
+            background: var(--brand);
+            border: 2px solid var(--brand);
+            transition: transform .18s ease;
+        }
+
+        /* Shine wipe */
+        .btn-apply::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.05));
+            transform: skewX(-18deg);
+            transition: all 0.6s cubic-bezier(.2, .9, .25, 1);
+            pointer-events: none;
+        }
+
+        .btn-apply:hover::before {
+            left: 140%;
+        }
+
+        .btn-apply:active {
+            transform: scale(.985);
+        }
+
+        /* Small entrance animation for CTAs */
+        .entrance {
+            opacity: 0;
+            transform: translateY(12px);
+            animation: enter .6s forwards cubic-bezier(.2, .9, .25, 1);
+        }
+
+        .entrance.delay-1 {
+            animation-delay: .12s;
+        }
+
+        .entrance.delay-2 {
+            animation-delay: .26s;
+        }
+
+        @keyframes enter {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* responsive tweaks */
+        @media (max-width:992px) {
+            .hero {
+                padding: 40px 0;
+            }
+        }
+
+        @media (max-width:576px) {
+            .kpi-stack {
+                gap: 10px;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container d-flex align-items-center justify-content-between">
+            <!-- Brand Logo -->
+            <a class="navbar-brand brand-logo" href="#">
+                <img src="https://allianceonline.edu.in/static/assets/images/au-logo.webp" class="img-fluid w-100"
+                    alt="">
+            </a>
+
+            <!-- Hamburger Toggler for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu Links -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+                <div class="navbar-nav align-items-center gap-3">
+                    <a class="nav-link text-dark" href="#home">Home</a>
+                    <a class="nav-link text-dark" href="#programs">Programs</a>
+                    <a class="nav-link text-dark" href="#curriculum">Curriculum</a>
+                    <a class="nav-link text-dark" href="#faculty">Faculty</a>
+                    <a class="btn btn-md request-btn" href="#contact">Request Info</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <style>
+        /* NAVBAR */
+        .navbar {
+            padding: 0.5rem 1.25rem;
+            backdrop-filter: blur(6px);
+            background: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 6px 18px rgba(20, 30, 70, 0.03);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+            z-index: 999;
+        }
+
+        /* Brand */
+        .brand-logo img {
+            max-height: 50px;
+        }
+
+        /* Links */
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--brand);
+        }
+
+        /* Button */
+        .request-btn {
+            border-color: var(--brand);
+            color: white;
+            background: var(--brand);
+            transition: 0.3s;
+            font-weight: 500;
+            transition: all .4 ease !important;
+        }
+
+        .request-btn:hover {
+            background: #ffffff !important;
+            color: #6d1b30;
+            border: 2px solid #6d1b30;
+            font-weight: 500;
+        }
+
+        /* Hamburger icon customization */
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+    </style>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <!-- Left Content -->
+                <div class="col-lg-7">
+                    <div class="hero-card">
+                        <small class="text-blur text-uppercase mb-1">Online MBA • 12–24 months</small>
+                        <h1 class="text-blur">Empower Your Success,
+                            Study MBA Online with
+                            Alliance University
+                        </h1>
+                        <p class="text-blur lead">
+                            Unlock your Leadership Potential
+                            with - a World Class MBA Degree
+
+                        </p>
+
+                        <div class="d-flex flex-wrap align-items-center gap-3 mb-3 blur-wrapper">
+                            <div class="d-flex gap-2">
+                                <button class="btn-brochure"><i class="fa-solid fa-file-arrow-down me-2"></i>Download
+                                    Brochure</button>
+                                <button class="btn-apply">Apply Now</button>
+                            </div>
+
+                            <div class="d-none d-md-flex kpis gap-4">
+                                <div class="kpi">
+                                    <i class="fa-solid fa-graduation-cap fa-lg text-primary"></i>
+                                    <div class="ms-2">
+                                        <div class="small text-white"> Duration</div><strong>2 Years</strong>
+                                    </div>
+                                </div>
+                                <div class="kpi">
+                                    <i class="fa-solid fa-briefcase fa-lg text-primary"></i>
+                                    <div class="ms-2">
+                                        <div class="small text-white"> Degree Level</div>
+                                        <strong> Postgraduate
+
+                                        </strong>
+                                    </div>
+                                </div>
+                                <!-- <div class="kpi">
+                                    <i class="fa-solid fa-calendar-days fa-lg text-primary"></i>
+                                    <div class="ms-2">
+                                        <div class="small text-white">Duration</div><strong>12–24 mo</strong>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <ul class="list-inline mb-0 text-blur">
+                            <li class="list-inline-item small text-white me-4"><i class="fa-solid fa-scroll"></i>
+                                [ Download Brochure ]</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Form -->
+                <div class="col-lg-5 col-md-5 mt-4 mt-lg-0">
+                    <div class="searchForm p-4 rounded bg-white shadow-sm">
+                        <h2 class="fw-bold text-center text-white fs-5 mb-4">
+                            Get Guidance for the 2025-26 Alliance University Online MBA Admission!
+
+                        </h2>
+                        <form action="#">
+                            <div class="mb-3"><input name="name" type="text" placeholder="Enter Name"
+                                    class="form-control" required></div>
+                            <div class="mb-3"><input name="email" type="email" placeholder="Enter Email"
+                                    class="form-control" required></div>
+                            <div class="mb-3 position-relative">
+                                <div class="flag-dropdown d-flex align-items-center justify-content-center">
+                                    <div class="flag in"></div>
+                                </div>
+                                <input class="form-control ps-5" placeholder="Enter Phone Number" type="tel" required>
+                            </div>
+                            <div class="mb-3"><input name="course" type="text" placeholder="College in mind"
+                                    class="form-control"></div>
+                            <div class="mb-3"><input name="location" type="text" placeholder="Enter Location"
+                                    class="form-control"></div>
+                            <div class="mb-3 form-check">
+                                <input name="terms" type="checkbox" id="terms" class="form-check-input" required>
+                                <label class="form-check-label text-white" for="terms">
+                                    By clicking this, I agree to the <a href="/terms-and-conditions"
+                                        class="text-warning">Terms &
+                                        Conditions</a>
+                                </label>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn sub-btn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .sub-btn {
+            border: 3px solid rgb(124, 10, 2);
+            color: #ffffff;
+            font-weight: 600;
+            background-color: #6d1b2fc0;
+            transition: all 0.5s ease;
+        }
+
+        .sub-btn:hover {
+            border: 3px solid rgb(124, 10, 2);
+            color: #ffffff;
+            font-weight: 600;
+            background-color: #6d1b2fc0;
+            letter-spacing: 3px;
+        }
+
+        .text-primary-emphasis {
+            font-weight: 600;
+        }
+
+        /* HERO BACKGROUND */
+        .hero {
+            padding: 64px 0;
+            background-image: url('https://cdn.pixabay.com/photo/2021/10/01/02/49/graduate-6671173_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-bottom: 40px;
+            clip-path: polygon(0% 0%, 100% 0, 100% 88%, 50% 100%, 0 89%);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Dark overlay */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+            /* Adjust darkness: 0.3 = light, 0.7 = darker */
+            z-index: -1;
+        }
+
+
+        /* HERO CARD - text only blurred */
+        .hero-card {
+            background: transparent;
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            max-width: 600px;
+        }
+
+        .hero-card h1 {
+            font-weight: 700;
+        }
+
+        /* Text blur / glass effect */
+        .text-blur {
+            position: relative;
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            background: rgba(0, 58, 115, 0.25);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            line-height: 1.3;
+            font-weight: 500;
+        }
+
+        /* Buttons */
+        .btn-brochure,
+        .btn-apply {
+            border-radius: 10px;
+            padding: 0.6rem 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-brochure {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-brochure:hover {
+            background-color: rgba(255, 255, 255, 0.35);
+        }
+
+        .btn-apply {
+            background-color: rgb(124, 10, 2);
+            color: #ffffff;
+        }
+
+        .btn-apply:hover {
+            background-color: rgb(124, 10, 2);
+        }
+
+        /* KPI Boxes */
+        .kpis .kpi {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 12px 14px;
+            box-shadow: 0 6px 18px rgba(10, 30, 60, 0.05);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        /* Form */
+        .searchForm {
+            background-color: #00274f59 !important;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .flag-dropdown {
+            width: 40px;
+            height: 35px;
+            background: #f1f1f1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 6px 0 0 6px;
+        }
+
+        .flag.in {
+            background-image: url('https://flagcdn.com/in.svg');
+            background-size: cover;
+        }
+
+        .submitBtn {
+            height: 45px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 991px) {
+            .hero {
+                padding: 40px 0;
+            }
+
+            .text-blur {
+                display: block;
+                padding: 0.4rem 0.6rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .kpis {
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .lead {
+                font-size: 0.95rem;
+            }
+
+            .btn-brochure,
+            .btn-apply {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+
+    <h4 class="text-center fs-1 fst-italic">Electives</h4>
+    <section class="zigzag-section d-flex align-items-center justify-content-center">
+        <div class="zigzag-line">
+            <span><svg width="25" height="25" viewBox="0 0 17 18" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="flagGrad" x1="0" y1="0" x2="17" y2="18" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#003366" />
+                            <stop offset="1" stop-color="#004b99" />
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Border only -->
+                    <path d="M2 1h13v14l-6.5-3.5L2 15V1Z" fill="none" stroke="url(#flagGrad)" stroke-width="2"
+                        stroke-linejoin="round" />
+                </svg>
+
+                Marketing</span>
+            <span><svg width="25" height="25" viewBox="0 0 17 18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="flagGrad" x1="0" y1="0" x2="17" y2="18" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#003366" />
+                            <stop offset="1" stop-color="#004b99" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M2 1h13v14l-6.5-3.5L2 15V1Z" fill="url(#flagGrad)" />
+                    <path d="M2 1h13" stroke="#ffffff" stroke-opacity="0.18" />
+                </svg>
+                Finance</span>
+            <span><svg width="25" height="25" viewBox="0 0 17 18" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="flagGrad" x1="0" y1="0" x2="17" y2="18" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#003366" />
+                            <stop offset="1" stop-color="#004b99" />
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Border only -->
+                    <path d="M2 1h13v14l-6.5-3.5L2 15V1Z" fill="none" stroke="url(#flagGrad)" stroke-width="2"
+                        stroke-linejoin="round" />
+                </svg>
+
+                Business Analytics</span>
+            <span><svg width="25" height="25" viewBox="0 0 17 18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="flagGrad" x1="0" y1="0" x2="17" y2="18" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#003366" />
+                            <stop offset="1" stop-color="#004b99" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M2 1h13v14l-6.5-3.5L2 15V1Z" fill="url(#flagGrad)" />
+                    <path d="M2 1h13" stroke="#ffffff" stroke-opacity="0.18" />
+                </svg>
+                HRM</span>
+            <span><svg width="25" height="25" viewBox="0 0 17 18" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="flagGrad" x1="0" y1="0" x2="17" y2="18" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#003366" />
+                            <stop offset="1" stop-color="#004b99" />
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Border only -->
+                    <path d="M2 1h13v14l-6.5-3.5L2 15V1Z" fill="none" stroke="url(#flagGrad)" stroke-width="2"
+                        stroke-linejoin="round" />
+                </svg>
+
+                Operations</span>
+            <span><svg width="25" height="25" viewBox="0 0 17 18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="flagGrad" x1="0" y1="0" x2="17" y2="18" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#003366" />
+                            <stop offset="1" stop-color="#004b99" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M2 1h13v14l-6.5-3.5L2 15V1Z" fill="url(#flagGrad)" />
+                    <path d="M2 1h13" stroke="#ffffff" stroke-opacity="0.18" />
+                </svg>
+                Business Analytics & AI</span>
+            <!-- <span><svg width="25" height="25" viewBox="0 0 17 18" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="flagGrad" x1="0" y1="0" x2="17" y2="18" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#003366" />
+                            <stop offset="1" stop-color="#004b99" />
+                        </linearGradient>
+                    </defs>
+
+                  
+                    <path d="M2 1h13v14l-6.5-3.5L2 15V1Z" fill="none" stroke="url(#flagGrad)" stroke-width="2"
+                        stroke-linejoin="round" />
+                </svg>
+
+                Success</span> -->
+        </div>
+    </section>
+
+
+    <style>
+        .zigzag-section {
+            min-height: 30vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: auto;
+            /* allow horizontal scroll on very small screens */
+            padding: 1rem 0;
+        }
+
+        .zigzag-line {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+            /* wrap on smaller screens */
+            justify-content: center;
+        }
+
+        .zigzag-line span {
+            font-size: 22px;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+            /* prevent text from breaking mid-word */
+            transition: transform 0.3s ease;
+        }
+
+        /* Zigzag effect */
+        .zigzag-line span:nth-child(odd) {
+            transform: translateY(-15px);
+        }
+
+        .zigzag-line span:nth-child(even) {
+            transform: translateY(15px);
+        }
+
+        /* SVG size adjustment */
+        .zigzag-line svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 991px) {
+            .zigzag-line span {
+                font-size: 18px;
+                gap: 0.4rem;
+            }
+
+            .zigzag-line {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .zigzag-line span {
+                font-size: 16px;
+                transform: none !important;
+                /* remove zigzag on tiny screens */
+            }
+
+            .zigzag-line {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .zigzag-line svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    </style>
+
+    <section class="eligibility">
+        <div class="container text-center text-white py-5">
+            <h4 class="fs-1 mb-5 fst-italic"> Eligibility</h4>
+
+            <!-- Eligibility Item -->
+            <div class="eligibility-item d-flex align-items-center gap-0 flex-wrap justify-content-center">
+                <div class="icon-wrap">
+                    <svg width="40" height="40" viewBox="0 0 48 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19.0508 37.3148H10.4151C9.66514 37.3148 9.05664 37.9233 9.05664 38.6732C9.05664 39.4232 9.66514 40.0317 10.4151 40.0317H19.0508C19.8008 40.0317 20.4093 39.4232 20.4093 38.6732C20.4093 37.9233 19.8008 37.3148 19.0508 37.3148Z"
+                            fill="white"></path>
+                        <path
+                            d="M37.5849 23.6556H10.4151C9.66514 23.6556 9.05664 24.2641 9.05664 25.0141C9.05664 25.7676 9.66514 26.3726 10.4151 26.3726H37.5849C38.3349 26.3726 38.9434 25.7676 38.9434 25.0141C38.9434 24.2641 38.3349 23.6556 37.5849 23.6556Z"
+                            fill="white"></path>
+                        <path
+                            d="M37.5849 9.99988H10.4151C9.66514 9.99988 9.05664 10.6084 9.05664 11.3584C9.05664 12.1084 9.66514 12.7169 10.4151 12.7169H37.5849C38.3349 12.7169 38.9434 12.1084 38.9434 11.3584C38.9434 10.6084 38.3349 9.99988 37.5849 9.99988Z"
+                            fill="white"></path>
+                        <path
+                            d="M39.3962 0.94342H8.60377C3.85259 0.950495 0.00706415 4.79601 0 9.54719V49.3962C0.00707502 54.1474 3.85259 57.993 8.60377 58H39.3962C44.1474 57.9929 47.9929 54.1474 48 49.3962V9.54719C47.9929 4.79601 44.1474 0.950485 39.3962 0.94342ZM45.283 49.3962C45.2795 52.6474 42.6474 55.2795 39.3962 55.283H8.60377C5.35263 55.2795 2.72051 52.6474 2.71698 49.3962V9.54719C2.72052 6.29605 5.35263 3.66393 8.60377 3.6604H39.3962C42.6474 3.66394 45.2795 6.29605 45.283 9.54719V49.3962Z"
+                            fill="white"></path>
+                        <path
+                            d="M31.6037 32.7123C28.8018 32.7123 26.2794 34.3998 25.2075 36.9859C24.1355 39.572 24.7264 42.5472 26.7074 44.5283C28.685 46.5059 31.6603 47.1002 34.2463 46.0283C36.836 44.9564 38.52 42.4339 38.52 39.6356C38.5164 35.8148 35.4209 32.7193 31.6037 32.7123Z"
+                            fill="white"></path>
+                        <path
+                            d="M26.9553 47.0225V51.8763C26.9588 52.4034 27.2595 52.8811 27.7336 53.111C28.2006 53.3303 28.756 53.2667 29.1628 52.9483L31.6074 50.9919L34.0343 52.9483C34.2819 53.1287 34.5791 53.2313 34.8869 53.2348C35.092 53.2384 35.2972 53.1959 35.4847 53.111C35.9517 52.8775 36.2489 52.3999 36.2453 51.8763V47.0225C33.4046 48.8091 29.7927 48.8091 26.9553 47.0225Z"
+                            fill="white"></path>
+                    </svg>
+                </div>
+                <p class="mb-0 text-start text-md-center">
+                    Candidates with a Bachelor’s degree with a minimum of 50% marks (45% for SC/ST candidates) are
+                    eligible to apply.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <style>
+        .eligibility {
+            background: #6d1b30;
+            padding: 40px 20px;
+        }
+
+        .eligibility h4 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+        }
+
+        .eligibility-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            max-width: 900px;
+            /* limit width */
+            margin: 0 auto;
+            /* center horizontally */
+            text-align: left;
+            flex-wrap: wrap;
+            /* wrap for small screens */
+        }
+
+        .icon-wrap {
+            width: 68px;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            animation: pulseIcon 1.6s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes pulseIcon {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+            }
+
+            50% {
+                transform: scale(1.12);
+                box-shadow: 0 0 12px 3px rgba(255, 255, 255, 0.3);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+            }
+        }
+
+        .eligibility-item p {
+            line-height: 1.4;
+            flex: 1;
+            /* make text take remaining space */
+            min-width: 200px;
+            /* prevent text from getting too narrow */
+        }
+
+        .eligibility svg {
+            flex-shrink: 0;
+        }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 768px) {
+            .eligibility-item {
+                gap: 15px;
+            }
+
+            .icon-wrap {
+                width: 50px;
+                height: 50px;
+            }
+
+            .eligibility svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .eligibility h4 {
+                font-size: 1.8rem;
+            }
+
+            .eligibility-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .eligibility-item p {
+                min-width: unset;
+            }
+        }
+    </style>
+
+
+    <!-- ======================================================================card swiper -->
+
+    <h2 class="section-title mb-5 fs-1 text-center mt-5 mb-5">
+        Rankings <span class="fst-italic" style="color: #003a73;">&</span>
+        Accreditations</h2>
+
+    <div class="card-carousel m-5">
+        <div class="card">
+            <img src="https://allianceonline.edu.in/static/assets/images/nirf.svg" alt="NIRF">
+            <h3>NIRF Ranking</h3>
+            <p>Recognized for academic excellence</p>
+        </div>
+        <div class="card">
+            <img src="https://allianceonline.edu.in/static/assets/images/ugc.svg" alt="UGC">
+            <h3>UGC Approved</h3>
+            <p>Approved by University Grants Commission ensuring quality standards</p>
+        </div>
+        <div class="card">
+            <img src="https://allianceonline.edu.in/static/assets/images/dsir.svg" alt="NAAC">
+            <h3>DSIR Recognition</h3>
+            <p>Recognized by Department of Scientific and Industrial Research for research excellence</p>
+        </div>
+        <div class="card">
+            <img src="https://allianceonline.edu.in/static/assets/images/naac.svg" alt="NIRF">
+            <h3>NAAC A+ Grade</h3>
+            <p>Accredited NAAC A+ grade by National Assessment and Accreditation council</p>
+        </div>
+        <div class="card">
+            <img src="https://allianceonline.edu.in/static/assets/images/wur.svg" class="img-fluid w-25" alt="NIRF">
+            <h3>World University Rankings</h3>
+            <p>Featured in International University rankings for global recognition</p>
+        </div>
+    </div>
+
+    <style>
+        .card-carousel .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 150px;
+            /* fixed width */
+            height: 250px;
+            /* fixed height */
+            box-sizing: border-box;
+            margin: 0 10px;
+            /* gap between cards */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card img {
+            width: 60px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #800000;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+            flex-grow: 1;
+            /* make descriptions align properly */
+        }
+
+        .slick-prev,
+        .slick-next {
+            background: #ffffff;
+            border-radius: 50%;
+            width: 45px;
+            height: 42px;
+            z-index: 10;
+            border: 2px solid #800000;
+        }
+
+        /* .slick-prev:hover,
+        .slick-next:hover {
+            background: #800000;
+            color: #fff;
+        } */
+
+        .slick-prev:before,
+        .slick-next:before {
+            color: #800000;
+            font-size: 26px;
+        }
+
+        /* Remove default Slick slide padding */
+        .slick-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+
+    <!-- =================================================================content  -->
+
+    <div class="container  text-center mt-5 mb-5">
+        <h2 class="section-title mb-5 fs-1 mt-5">
+            Online MBA at
+            <span class="" style="color: #003a73;">Alliance University</span>
+            
+        </h2>
+
+        <p>The MBA program at Alliance Online is a comprehensive two-year postgraduate course designed to cultivate
+            strategic thinking, mould leadership skills and enhance analytical skillset. Alliance’s online MBA offering
+            is designed to combine quality teaching with flexible financing, targeting working professionals and
+            budget-conscious students. It offers electives in areas such as Marketing, Finance, Human Resource
+            Management, Operations and Business Analytics. </p>
+    </div>
+
+
+    <section class="advantage-section py-5 mt-">
+        <div class="container text-center" style="max-width: 1500px !important;">
+            <h2 class="section-title mb-5 fs-1">
+                Why MBA at <span class="" style="color: #003a73;">Alliance University</span>, Bangalore
+            </h2>
+
+            <div class="row g-5 justify-content-center mt-5">
+
+                <!-- Card 1 -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="adv-card">
+                        <div class="adv-icon">
+                            <svg width="76" height="75" viewBox="0 0 76 75" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" width="75" height="75" rx="37.5" fill="#003a73"></rect>
+                                <path
+                                    d="M25.8541 34.9317C33.1411 38.4849 41.6567 38.4849 48.9437 34.9317C49.1307 34.8425 49.2503 34.6512 49.2503 34.4446V25.9289L53.6625 24.4872C54.2192 24.3024 54.6041 23.7936 54.6302 23.2086C54.6585 22.6236 54.3214 22.0822 53.7865 21.8452L38.658 15.2607C37.8534 14.9127 36.9423 14.9127 36.1377 15.2628L21.0092 21.8473C20.4743 22.0844 20.1394 22.6258 20.1677 23.2108C20.196 23.7957 20.5808 24.3045 21.1375 24.4872L25.5475 25.929V34.4446C25.5475 34.6512 25.6671 34.8425 25.8541 34.9317ZM21.2527 23.1567C21.244 23.0218 21.3201 22.8957 21.4463 22.8435L36.5681 16.2613C37.0965 16.0308 37.6966 16.0308 38.2251 16.2591L53.3492 22.8413V22.8435C53.4731 22.8979 53.5492 23.024 53.5449 23.1588C53.5383 23.2937 53.4492 23.4111 53.3209 23.4546L46.7971 25.5856C46.5144 25.6813 46.36 25.9857 46.4513 26.2706C46.5448 26.5555 46.8514 26.7121 47.1363 26.6185L48.1628 26.2837V34.1012C41.3456 37.313 33.4518 37.313 26.6346 34.1012V26.2837L36.4267 29.4824C36.7398 29.5825 37.0682 29.6325 37.3966 29.6303C37.7293 29.6303 38.0598 29.5803 38.3773 29.4803L42.9438 27.9907V30.9655C42.9438 31.2656 43.1874 31.5091 43.4875 31.5091C43.7875 31.5091 44.0311 31.2656 44.0311 30.9655V25.7466C44.0289 24.0048 42.6176 22.5956 40.878 22.5934H37.3987C37.0986 22.5934 36.855 22.837 36.855 23.1371C36.855 23.4372 37.0986 23.6807 37.3987 23.6807H40.878C42.0174 23.6807 42.9416 24.6049 42.9438 25.7465V26.8469L38.0423 28.4452V28.4473C37.6248 28.5778 37.1768 28.5778 36.7593 28.4473L21.4789 23.4568C21.3462 23.4155 21.2549 23.2958 21.2527 23.1567Z"
+                                    fill="white"></path>
+                                <path
+                                    d="M59.2792 38.2679C59.2705 38.2657 59.264 38.2657 59.2553 38.2657C59.2183 38.2635 59.1813 38.2505 59.1444 38.2505C59.1226 38.2505 59.1052 38.257 59.0835 38.2592C59.0748 38.2592 59.0661 38.257 59.0574 38.2592L58.9204 38.2809V38.2787C58.8638 38.2853 58.8051 38.294 58.7464 38.307L39.0731 41.4536C39.0514 41.4188 39.0275 41.3796 39.0057 41.3492C38.61 40.7121 38.1598 39.9901 37.3987 39.9901C36.6376 39.9901 36.1875 40.7121 35.7918 41.3492C35.7722 41.3818 35.7483 41.4188 35.7243 41.4536L16.0511 38.307C15.9924 38.294 15.9336 38.2853 15.8771 38.2787L15.7401 38.257C15.7314 38.2548 15.7227 38.2592 15.714 38.257C15.6923 38.257 15.6749 38.2483 15.6531 38.2483C15.614 38.2483 15.5792 38.2592 15.5422 38.2635C15.5335 38.2657 15.5248 38.2657 15.5161 38.2657C13.5373 38.4527 12.5 42.5561 12.5 46.6227C12.5 50.7804 13.5829 54.9902 15.651 54.9947H15.6553C15.6901 54.9925 15.7249 54.9903 15.7597 54.9838L15.8097 54.9729C15.9119 54.9642 16.0119 54.9446 16.1098 54.9142L28.8072 52.3765C29.1008 52.3178 29.2922 52.0307 29.2334 51.7372C29.1747 51.4415 28.8899 51.2501 28.5941 51.3088L17.5128 53.5247C18.4522 51.3479 18.8936 48.9908 18.8066 46.6229C18.8066 43.9243 18.3478 41.2126 17.4649 39.6337L32.3278 42.0127C32.243 42.0583 32.1626 42.1192 32.093 42.1866C31.5754 42.7063 31.7603 43.5174 31.9234 44.2329C32.0321 44.5678 32.0734 44.9222 32.0451 45.2745C31.8212 45.5246 31.5537 45.7312 31.2558 45.8856C30.6186 46.2813 29.8967 46.7315 29.8967 47.4926C29.8967 48.2537 30.6186 48.7038 31.2558 49.0995C31.5537 49.2518 31.8211 49.4583 32.0451 49.7084C32.0778 49.8541 32.0778 50.0064 32.043 50.1521L28.3353 56.8256C28.1374 57.1866 28.1809 57.6345 28.4462 57.952C28.7094 58.2695 29.1421 58.3913 29.5335 58.263L31.247 57.6889L31.8581 59.5351C31.9886 59.9113 32.33 60.1744 32.7279 60.2092C32.7562 60.2114 32.7866 60.2135 32.8149 60.2135L32.8127 60.2114C33.1759 60.2135 33.5086 60.0157 33.6826 59.6982L36.5138 54.601H36.5116C36.74 54.8511 37.0618 54.9946 37.3989 54.9946C37.736 54.9946 38.0578 54.8511 38.2839 54.601L41.113 59.696H41.1151C41.2869 60.0157 41.6218 60.2135 41.985 60.2114C42.0132 60.2114 42.0437 60.2114 42.0719 60.207L42.0698 60.2092C42.4699 60.1744 42.8135 59.9069 42.9439 59.5264L43.5506 57.6889L45.2685 58.2629H45.2663C45.6599 58.3912 46.0905 58.2673 46.3536 57.9498C46.6167 57.6301 46.658 57.1843 46.458 56.8212L43.7376 51.9241L59.0376 54.9837C59.0723 54.9902 59.1071 54.9946 59.1441 54.9946H59.1463C61.2143 54.9902 62.2972 50.7803 62.2972 46.6226C62.2972 42.554 61.2602 38.4482 59.2792 38.2679ZM17.7192 46.6226C17.7192 50.7455 16.6689 53.481 15.8426 53.8573L15.6251 53.9008C14.7836 53.8399 13.5876 51.0217 13.5876 46.6227C13.5876 42.2083 14.7923 39.3835 15.6338 39.3423L15.8165 39.3706C16.645 39.699 17.7192 42.4542 17.7192 46.6226ZM32.826 59L32.2476 57.2495C32.0649 56.7319 31.5017 56.4579 30.982 56.6319L29.3946 57.1646L31.9344 52.5937L31.9323 52.5916C31.9779 52.6655 32.0323 52.7351 32.0932 52.7982C32.6129 53.3157 33.424 53.133 34.1394 52.9699L34.1416 52.9678C34.4765 52.859 34.8288 52.8177 35.1811 52.8438C35.4311 53.0678 35.6377 53.3353 35.7921 53.6354L35.7987 53.6462L32.826 59ZM37.3991 53.9072C37.2817 53.9072 37.0468 53.5788 36.8707 53.3048C36.8663 53.2983 36.862 53.2896 36.8576 53.2831C36.8033 53.1983 36.7532 53.1178 36.7163 53.0591H36.7141C36.4727 52.5503 36.0835 52.1262 35.5986 51.8414C35.4115 51.7674 35.2115 51.7305 35.0093 51.7348C34.6331 51.7522 34.2612 51.8109 33.8981 51.9088C33.5653 52.0132 33.213 52.0566 32.8629 52.0306C32.8347 51.6804 32.876 51.326 32.9825 50.9911C33.0282 50.7954 33.0674 50.5975 33.1 50.4018L33.1021 50.3866V50.3888C33.187 50.0256 33.1696 49.6451 33.05 49.2906C32.7629 48.8057 32.3389 48.4186 31.83 48.1772C31.5778 48.0185 30.9842 47.6488 30.9842 47.4922C30.9842 47.3356 31.5778 46.966 31.83 46.8072C32.3389 46.5658 32.7651 46.1766 33.05 45.6917C33.1978 45.1306 33.1739 44.5392 32.9847 43.9912C32.8782 43.6584 32.8347 43.3061 32.8608 42.9582C33.2109 42.9278 33.5631 42.9669 33.898 43.0756C34.446 43.267 35.0375 43.2909 35.5986 43.1431C35.9595 42.956 36.2596 42.669 36.4619 42.3167C36.5488 42.1884 36.6315 42.0558 36.7141 41.9231C36.8728 41.6709 37.2425 41.0772 37.3991 41.0772C37.5557 41.0772 37.9253 41.6709 38.0841 41.9231C38.1667 42.0558 38.2494 42.1884 38.3364 42.3167V42.3189C38.5386 42.6712 38.8387 42.956 39.1997 43.1431C39.7607 43.2909 40.3522 43.267 40.9002 43.0757C41.2329 42.9669 41.5852 42.9256 41.9353 42.9539C41.9635 43.304 41.9222 43.6584 41.8157 43.9911C41.6243 44.5391 41.6004 45.1306 41.7483 45.6917C42.0353 46.1766 42.4593 46.5658 42.9682 46.8072C43.2204 46.9659 43.8141 47.3356 43.8141 47.4922C43.8141 47.6488 43.2204 48.0184 42.9682 48.1772C42.4593 48.4186 42.0353 48.8078 41.7483 49.2927C41.6287 49.6472 41.6113 50.0256 41.6939 50.3888L41.6961 50.3996C41.7287 50.5953 41.77 50.7932 41.8135 50.9911C41.8265 51.0476 41.8418 51.1216 41.8592 51.1933C41.8613 51.2064 41.8635 51.2173 41.8679 51.2281V51.2303C41.9483 51.4869 41.9722 51.7587 41.9375 52.0262C41.5873 52.0545 41.2351 52.0131 40.9002 51.9088C40.3522 51.7174 39.7607 51.6935 39.1997 51.8414C38.7147 52.1262 38.3255 52.5524 38.0841 53.0591C38.0472 53.1178 37.9971 53.1983 37.9428 53.2831C37.9363 53.2896 37.9341 53.2983 37.9297 53.3048C37.7514 53.5788 37.5165 53.9072 37.3991 53.9072ZM43.8121 56.6297C43.288 56.4579 42.7227 56.7406 42.5444 57.2625L41.9703 59L38.9977 53.6462L39.0042 53.6353H39.0064C39.1608 53.3374 39.3674 53.0678 39.6175 52.8438C39.9676 52.8177 40.322 52.859 40.6569 52.9677C41.3724 53.1308 42.1835 53.3178 42.7032 52.7959H42.7054C42.7663 52.735 42.8206 52.6655 42.8663 52.5915L45.4062 57.1624L43.8121 56.6297ZM59.1733 53.9007L43.0467 50.6779L42.7553 50.1517H42.7531C42.7205 50.006 42.7205 49.856 42.7531 49.7103C42.9771 49.4602 43.2445 49.2536 43.5425 49.0992C44.1796 48.7034 44.9016 48.2533 44.9016 47.4922C44.9016 46.7311 44.1796 46.281 43.5425 45.8852C43.2446 45.7308 42.9771 45.5243 42.7531 45.2742C42.7248 44.9219 42.7661 44.5696 42.8749 44.2325C43.038 43.5171 43.225 42.706 42.7053 42.1863C42.6357 42.1189 42.5552 42.058 42.4704 42.0123L57.3334 39.6334C56.4483 41.2121 55.9916 43.9237 55.9916 46.6226C55.9721 48.3209 56.1721 50.0171 56.5853 51.6654C56.6223 51.8045 56.7136 51.9241 56.8375 51.9981C56.9637 52.0698 57.1115 52.0894 57.2529 52.0524C57.392 52.0155 57.5116 51.9241 57.5834 51.798C57.6552 51.6719 57.6747 51.5218 57.6356 51.3827C57.2507 49.8257 57.0637 48.2252 57.0789 46.6226C57.0789 42.4539 58.1531 39.6985 58.9817 39.3706L59.1643 39.3423C60.0059 39.3837 61.2106 42.2106 61.2106 46.6227C61.2106 51.0218 60.0149 53.8422 59.1733 53.9007Z"
+                                    fill="white"></path>
+                            </svg>
+                        </div>
+                        <h5 class="adv-title">Global Accreditation</h5>
+                        <p class="adv-text">NAAC A+ graded and
+                            UGC approved institution</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="adv-card">
+                        <div class="adv-icon">
+                            <svg width="76" height="75" viewBox="0 0 76 75" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" width="75" height="75" rx="37.5" fill="#003a73"></rect>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M23.5897 56.5258H16.6973V57.661C16.6973 57.9472 16.8535 58.2178 17.1035 58.4197C17.3906 58.6531 17.7949 58.7962 18.2461 58.7962H35.9999C36.451 58.7962 36.8553 58.6531 37.1425 58.4197C37.3925 58.2178 37.5487 57.9472 37.5487 57.661V56.5258H30.6583L29.9806 57.4747C29.8731 57.6355 29.6895 57.7433 29.4825 57.7433H24.7658C24.5802 57.7433 24.3966 57.6551 24.2795 57.4924L23.5897 56.5258ZM38.1775 55.3239C38.4939 55.3396 38.7478 55.6023 38.7478 55.9239V57.661C38.7478 58.3295 38.4197 58.9275 37.8924 59.355C37.4002 59.753 36.7303 59.998 36.0018 59.998L18.246 60C17.5156 60 16.8456 59.753 16.3554 59.3569C15.8281 58.9295 15.5 58.3315 15.5 57.6629V55.9258C15.5 55.6043 15.752 55.3415 16.0703 55.3259V42.4189C16.0703 42.1307 16.2051 41.8739 16.4218 41.6935C16.6074 41.5405 16.8535 41.4464 17.1171 41.4464H37.1284C37.392 41.4464 37.6401 41.5405 37.8237 41.6935C38.0405 41.8719 38.1752 42.1287 38.1752 42.4189V55.3259L38.1775 55.3239ZM17.2678 55.3239V42.6463H36.9805V55.3239H30.3516C30.1661 55.3239 29.9825 55.4121 29.8653 55.5749L29.1758 56.5415H25.0743L24.3966 55.5926C24.2892 55.4318 24.1056 55.3239 23.8986 55.3239L17.2678 55.3239ZM48.1404 28.357V17.3227C46.9861 16.811 45.6932 16.4659 44.3963 16.3052C43.1521 16.1503 41.9119 16.166 40.7967 16.366V27.4791C41.8944 27.3457 43.2205 27.3752 44.5408 27.5398C45.8045 27.6967 47.074 27.979 48.1404 28.3594V28.357ZM49.3396 28.359C50.4059 27.9786 51.6755 27.6983 52.9391 27.5395C54.2575 27.3748 55.5856 27.3454 56.6832 27.4787L56.6813 16.3656C55.568 16.1656 54.3278 16.1499 53.0817 16.3048C51.7848 16.4656 50.4919 16.8106 49.3376 17.3223V28.3566L49.3396 28.359ZM39.5997 18.1147V28.1863C39.5997 28.5177 39.8673 28.7882 40.1993 28.7882C40.254 28.7882 40.3087 28.7804 40.3575 28.7667C41.4278 28.5432 42.9063 28.549 44.3965 28.7353C45.7519 28.9039 47.0995 29.2196 48.1425 29.645V30.99C46.7168 30.5528 44.9648 30.2313 43.2168 30.0568C41.4219 29.8764 39.6231 29.8509 38.1779 30.0136V18.244C38.4669 18.1989 38.8087 18.1538 39.1427 18.1303C39.2989 18.1185 39.4552 18.1127 39.5997 18.1127L39.5997 18.1147ZM49.3361 30.9866V29.6416C50.379 29.2161 51.7266 28.9004 53.0821 28.7318C54.5723 28.5475 56.0508 28.5397 57.1211 28.7632C57.1719 28.7769 57.2246 28.7848 57.2793 28.7848C57.6094 28.7848 57.8789 28.5162 57.8789 28.1829V18.0033C58.3613 18.0229 58.8828 18.1268 59.3027 18.221V30.0102C57.8555 29.8474 56.0567 29.8729 54.2638 30.0533C52.5177 30.2278 50.7638 30.5513 49.3381 30.9866L49.3361 30.9866ZM57.879 16.8032C58.5625 16.8248 59.2578 16.9816 59.7578 17.0934C59.8438 17.113 59.9219 17.1306 60.0215 17.1522C60.3027 17.211 60.498 17.46 60.498 17.7404H60.5V30.7021C60.5 31.0334 60.2324 31.304 59.9004 31.304C59.8555 31.304 59.8106 31.2981 59.7676 31.2883C58.3321 31.0452 56.3575 31.0491 54.3792 31.2471C52.3792 31.4471 50.389 31.8451 48.9497 32.3823L48.9361 32.3882H48.9341L48.9322 32.3902L48.9146 32.3961L48.9048 32.398L48.899 32.4L48.8911 32.4019L48.8814 32.4039L48.8755 32.4059L48.8677 32.4078L48.8618 32.4098L48.8384 32.4157H48.8345L48.8228 32.4176H48.8189L48.8091 32.4196H48.8033L48.7935 32.4215H48.7896L48.7798 32.4235H48.774L48.7662 32.4255H48.7583H48.7486H48.7447H48.7349H48.7251H48.7212H48.7115H48.7037H48.6958L48.69 32.4235H48.6802L48.6763 32.4215L48.6665 32.4196H48.6607L48.6509 32.4176H48.647L48.6353 32.4157H48.6314L48.6236 32.4137L48.6079 32.4098L48.6021 32.4078L48.5943 32.4059L48.5884 32.4039L48.5787 32.4019L48.5708 32.4L48.565 32.398L48.5552 32.3961L48.5376 32.3902H48.5357L48.5337 32.3882L48.5201 32.3823C47.0806 31.8432 45.0884 31.4471 43.0906 31.2471C41.1102 31.0491 39.1376 31.0452 37.7022 31.2883C37.6592 31.2981 37.6143 31.304 37.5694 31.304C37.2393 31.304 36.9698 31.0354 36.9698 30.7021L36.9815 17.7404C36.9815 17.4581 37.1788 17.2071 37.4659 17.1502C37.8194 17.0796 38.4424 16.9757 39.0655 16.9326C39.2471 16.9208 39.4268 16.913 39.6026 16.913V15.8778C39.6026 15.6052 39.7881 15.3582 40.0654 15.2935C41.4326 14.9719 42.9912 14.919 44.5439 15.1131C45.9931 15.2935 47.4462 15.6895 48.7411 16.2797C50.036 15.6895 51.4891 15.2935 52.9383 15.1131C54.491 14.919 56.0496 14.9719 57.4167 15.2935C57.6921 15.3582 57.8796 15.6052 57.8796 15.8778L57.879 16.8032ZM43.6876 53.4929C43.9865 53.6321 44.1173 53.9889 43.9806 54.2889C43.8419 54.5888 43.4865 54.7202 43.1877 54.583L40.7814 53.4654C40.6096 53.3928 40.4748 53.2438 40.4299 53.0478C40.3967 52.9046 40.4182 52.7615 40.4787 52.6399L41.592 50.2244C41.7307 49.9244 42.0861 49.7931 42.3849 49.9303C42.6838 50.0695 42.8146 50.4264 42.6779 50.7263L42.0978 51.9851C44.9806 51.0479 47.4842 49.2716 49.3262 46.9402C51.3789 44.3404 52.6035 41.0526 52.6035 37.4764C52.6035 37.2392 52.5996 37.0373 52.5938 36.8667C52.586 36.6863 52.5742 36.4844 52.5567 36.2609C52.5313 35.9295 52.7774 35.6413 53.1055 35.6158C53.4336 35.5903 53.7227 35.8374 53.7481 36.1668C53.7637 36.3609 53.7754 36.5785 53.7852 36.8197C53.795 37.0687 53.7989 37.2883 53.7989 37.4745C53.7989 41.3311 52.4747 44.8799 50.2599 47.6857C48.3302 50.1306 45.7209 52.0109 42.721 53.0422L43.6897 53.4912L43.6876 53.4929ZM32.1508 24.2246L32.7309 22.9659C29.8481 23.9031 27.3444 25.6794 25.5025 28.0108C23.4497 30.6106 22.2252 33.8983 22.2252 37.4745C22.2252 37.8059 21.9576 38.0765 21.6256 38.0765C21.2955 38.0765 21.026 37.8078 21.026 37.4745C21.026 33.618 22.3502 30.0692 24.565 27.2634C26.4947 24.8185 29.104 22.9382 32.1039 21.9069L31.1351 21.4579C30.8363 21.3187 30.7055 20.9618 30.8422 20.6619C30.9808 20.3619 31.3363 20.2305 31.6351 20.3678L34.0413 21.4854C34.2132 21.5579 34.348 21.7069 34.3929 21.903C34.4261 22.0461 34.4046 22.1892 34.3441 22.3108L33.2308 24.7263C33.0921 25.0263 32.7366 25.1576 32.4378 25.0204C32.139 24.8812 32.0082 24.5244 32.1449 24.2244L32.1508 24.2246Z"
+                                    fill="white"></path>
+                            </svg>
+                        </div>
+                        <h5 class="adv-title">Experienced Faculty</h5>
+                        <p class="adv-text">A team of academic scholars
+                            and Industry experts</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="adv-card">
+                        <div class="adv-icon">
+                            <svg width="76" height="75" viewBox="0 0 76 75" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" width="75" height="75" rx="37.5" fill="#003a73"></rect>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M25.0278 41.0898C26.1069 41.0898 26.9708 41.9486 26.9708 43.0226C26.9708 44.0952 26.1074 44.9573 25.0278 44.9573C23.9458 44.9573 23.0847 44.0948 23.0847 43.0226C23.0851 41.9486 23.9458 41.0898 25.0278 41.0898ZM25.0278 40.0344C23.3781 40.0344 22.0293 41.3753 22.0293 43.0226C22.0293 44.6672 23.3781 46.0136 25.0278 46.0136C26.6746 46.0136 28.0281 44.6672 28.0281 43.0226C28.0285 41.3753 26.6751 40.0344 25.0278 40.0344Z"
+                                    fill="white"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M22.8524 48.3861H27.1969C28.4777 48.3861 29.4939 49.3949 29.4939 50.6682V54.9689H27.8131V52.1553H26.7554V54.9689H22.8208V52.1553H21.7631V54.9689H20.5572V50.6682C20.5572 49.3949 21.5688 48.3861 22.8524 48.3861ZM22.8524 47.3307C21.0062 47.3307 19.5 48.8253 19.5 50.6682V56.0243H30.5493V50.6682C30.5493 48.8253 29.0431 47.3307 27.1974 47.3307H22.8524Z"
+                                    fill="white"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M50.9787 41.0898C52.0578 41.0898 52.919 41.9486 52.919 43.0226C52.919 44.0952 52.0578 44.9573 50.9787 44.9573C49.8968 44.9573 49.0356 44.0948 49.0356 43.0226C49.0356 41.9486 49.8968 41.0898 50.9787 41.0898ZM50.9787 40.0344C49.329 40.0344 47.9756 41.3753 47.9756 43.0226C47.9756 44.6672 49.329 46.0136 50.9787 46.0136C52.6256 46.0136 53.9772 44.6672 53.9772 43.0226C53.9772 41.3753 52.6256 40.0344 50.9787 40.0344Z"
+                                    fill="white"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M48.7989 48.3861H53.1485C54.4293 48.3861 55.4409 49.3949 55.4409 50.6682V54.9689H54.1285V51.9923H53.0731V54.9689H48.8842V51.9923H47.8288V54.9689H46.5065V50.6682C46.5065 49.3949 47.5181 48.3861 48.7989 48.3861ZM48.7989 47.3307C46.9527 47.3307 45.4512 48.8253 45.4512 50.6682V56.0243H56.5005V50.6682C56.5005 48.8253 54.9943 47.3307 53.1485 47.3307H48.7989Z"
+                                    fill="white"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M38.641 28.2713C39.723 28.2713 40.5841 29.1348 40.5841 30.207C40.5841 31.2814 39.723 32.1398 38.641 32.1398C37.5619 32.1398 36.7008 31.281 36.7008 30.207C36.7008 29.1348 37.5619 28.2713 38.641 28.2713ZM38.641 27.2164C36.9942 27.2164 35.6426 28.5629 35.6426 30.2074C35.6426 31.8548 36.9937 33.1957 38.641 33.1957C40.2907 33.1957 41.6395 31.8548 41.6395 30.2074C41.639 28.5624 40.2907 27.2164 38.641 27.2164Z"
+                                    fill="white"></path>
+                                <path
+                                    d="M35.4856 35.5677H41.2175C41.8849 35.5677 42.3236 35.7717 42.6268 36.1043C42.93 36.4363 43.1144 36.9375 43.1144 37.6198V41.0453H45.2979V42.3788H41.7903V39.5843H40.735V51.8739H35.9681V39.5848H34.9104V44.1914H33.5881V37.6203C33.5881 36.9379 33.7725 36.4368 34.0757 36.1047C34.3794 35.7717 34.8181 35.5677 35.4856 35.5677ZM35.4856 34.5128C34.5904 34.5128 33.814 34.8239 33.2952 35.3889C32.7787 35.9566 32.5332 36.7451 32.5332 37.6203V45.2468H34.9104V52.9339H41.7899V43.4346H46.3528V39.9853H44.1694V37.6203C44.1694 36.7451 43.922 35.9566 43.4027 35.3889C42.8862 34.8239 42.1145 34.5128 41.217 34.5128H35.4856Z"
+                                    fill="white"></path>
+                                <path
+                                    d="M23.5039 18.9758V38.0406H30.4491V36.9824H24.5616V20.0312H51.4486V36.9824H45.7022V38.0406H52.5063V18.9758H23.5039Z"
+                                    fill="white"></path>
+                            </svg>
+                        </div>
+                        <h5 class="adv-title">Dynamic Learning Approach</h5>
+                        <p class="adv-text">A blend of case studies, real projects,
+                            seminars and internships</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="adv-card">
+                        <div class="adv-icon">
+                            <svg width="76" height="75" viewBox="0 0 76 75" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" width="75" height="75" rx="37.5" fill="#003a73"></rect>
+                                <path
+                                    d="M17.0455 43.4348L21.7225 40.7832L22.5489 42.1886L28.1407 39.019V33.8288L28.2848 33.6555C29.2965 32.4323 30.7656 31.6261 32.3715 31.4423C29.9662 29.7082 29.6872 26.2697 31.8062 24.1912C33.7109 22.3209 36.7966 22.3209 38.7014 24.1912C40.8186 26.2701 40.5449 29.7068 38.1361 31.4423C39.7438 31.6244 41.211 32.4323 42.2228 33.6555C42.401 33.8677 42.3668 33.7757 42.3668 34.0427V38.7609C43.8683 39.2594 44.8063 40.7514 44.61 42.2734H46.5219L53.6799 38.2146C55.221 37.3431 57.1995 37.8646 58.0888 39.3743C58.9836 40.8946 58.3301 42.6393 56.9762 43.6593L47.5139 50.8046L29.664 50.8063L28.1283 51.6761L28.9295 53.0372L23.7049 56L16.5 43.746L17.0455 43.4348ZM21.2636 42.4679L18.2157 44.1967L24.1656 54.3134L27.2118 52.5845L27.0426 52.2946H27.0389L21.4632 42.8052L21.2636 42.4679ZM43.2347 42.604C43.737 41.3277 42.8008 39.8304 41.294 39.8304H29.2212L23.1759 43.2581L27.5002 50.6119L29.3347 49.5725H47.086L56.2027 42.6888C56.6816 42.3247 57.0272 41.8474 57.1677 41.3382C57.6033 39.7313 55.7544 38.4621 54.298 39.2877L46.8409 43.5143H44.1746C43.5823 44.5113 42.4931 45.1478 41.2905 45.1478L34.0874 45.1495V43.9121H41.2924C42.1583 43.9121 42.9269 43.38 43.2347 42.604ZM48.9436 20.4013C51.5325 20.4013 53.6335 22.4625 53.6335 25.0046C53.6335 27.5466 51.5344 29.6078 48.9436 29.6078C46.3566 29.6078 44.2555 27.5484 44.2555 25.0046C44.2555 22.4643 46.3565 20.4013 48.9436 20.4013ZM51.3686 22.6251C50.0328 21.3135 47.8598 21.3135 46.522 22.6251C45.1826 23.9403 45.1826 26.0705 46.522 27.3859C47.8578 28.7011 50.0308 28.7011 51.3686 27.3859C52.7081 26.0689 52.7081 23.9405 51.3686 22.6251ZM41.1048 38.4606V34.271C40.6656 33.7866 40.1291 33.3889 39.5313 33.1061C38.894 32.8091 38.1775 32.6394 37.4178 32.6394H33.0863C32.3283 32.6394 31.6118 32.8073 30.9727 33.1061C30.3732 33.3889 29.8385 33.7884 29.401 34.271V38.4606H41.1048ZM37.8085 25.0698C36.397 23.6839 34.1089 23.6839 32.6955 25.0698C31.284 26.4575 31.284 28.7042 32.6955 30.0939C34.1069 31.4798 36.3969 31.4798 37.8085 30.0939C39.2217 28.7062 39.2217 26.4576 37.8085 25.0698ZM48.9434 17C53.4729 17 57.142 20.6027 57.142 25.0503C57.142 28.0131 52.9364 34.6031 50.5329 38.4904C49.8056 39.6678 48.0845 39.6678 47.3572 38.4904C44.9538 34.6049 40.7482 28.0131 40.7482 25.0503C40.7464 20.6027 44.4157 17 48.9434 17ZM53.8494 20.2314C51.14 17.571 46.7491 17.571 44.0377 20.2314C42.7811 21.4653 42.007 23.1677 42.007 25.0501C42.007 27.4879 45.5932 33.2738 48.0109 37.177C48.0667 37.2689 48.0397 37.2247 48.0109 37.177L48.4304 37.8523C48.6626 38.2306 49.2261 38.2306 49.4584 37.8523L49.8778 37.177C49.8472 37.2247 49.8202 37.2689 49.8778 37.177C52.2975 33.2738 55.8817 27.488 55.8817 25.0501C55.8799 23.1693 55.1061 21.4651 53.8494 20.2314ZM49.8778 37.177C49.9354 37.0797 49.9048 37.1292 49.8778 37.177ZM48.0128 37.177C47.9804 37.1292 47.9516 37.0797 48.0128 37.177Z"
+                                    fill="white"></path>
+                            </svg>
+                        </div>
+                        <h5 class="adv-title">Diverse Career Opportunities</h5>
+                        <p class="adv-text">Marketing Manager, Financial Advisors,
+                            Business Analyst, HR Manager</p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="adv-card">
+                        <div class="adv-icon">
+                            <svg width="76" height="75" viewBox="0 0 76 75" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" width="75" height="75" rx="37.5" fill="#003a73"></rect>
+                                <path
+                                    d="M30.9456 43.7998C30.3153 42.8811 29.2801 41.7947 27.6965 40.3879C26.8834 39.6659 25.8362 39.2676 24.748 39.2676H24.1946C23.4054 39.2676 22.6264 39.4795 21.9448 39.8778C20.8806 40.5015 19.9479 41.2574 19.174 42.1235C19.1604 42.1388 19.1484 42.1557 19.1364 42.1727L17.734 44.3116C17.5222 44.6354 17.4504 45.0201 17.5341 45.3981C17.6178 45.7743 17.845 46.0964 18.1747 46.3014C18.8307 46.7116 19.7207 46.5116 20.1614 45.8557L21.2308 44.2608L21.5143 43.9794L21.3879 47.2014L20.8003 50.2625L18.5744 54.5946C18.3643 55.0031 18.337 55.4828 18.4958 55.9133C18.6564 56.3421 18.9929 56.6896 19.42 56.8641C19.6267 56.9489 19.8403 56.9895 20.0521 56.9895C20.6722 56.9895 21.2649 56.6421 21.5485 56.054L24.2937 50.3591L25.7713 51.854L26.9432 55.8845C27.0611 56.293 27.3481 56.6371 27.7307 56.8303C27.9511 56.9421 28.1954 56.9981 28.4396 56.9981C28.6173 56.9981 28.795 56.9675 28.9658 56.9082C29.7157 56.6404 30.1394 55.8591 29.9497 55.0896L28.8018 50.4339C28.7881 50.3814 28.7642 50.3305 28.7317 50.2864L27.0799 48.0678C26.7775 47.6627 26.6306 47.1627 26.6631 46.661L26.8236 44.1916L29.1383 45.9882C29.468 46.2441 29.89 46.3509 30.2948 46.2831C30.6911 46.2153 31.0277 45.9915 31.2446 45.6543C31.6324 45.0492 31.4974 44.2509 30.9457 43.8017L30.9456 43.7998ZM30.5425 45.2099C30.4536 45.3489 30.3153 45.4404 30.1547 45.4676C29.9804 45.4964 29.7977 45.4489 29.6525 45.3371L26.716 43.0574C26.5947 42.9625 26.4307 42.9439 26.2889 43.0049C26.1489 43.0676 26.0532 43.2032 26.0429 43.3557L25.8311 46.6065C25.785 47.3032 25.9917 47.9964 26.4102 48.5591L28.0126 50.7116L29.14 55.2879C29.2288 55.6455 29.0307 56.0082 28.6822 56.1319C28.4926 56.1997 28.2893 56.1862 28.1099 56.0963C27.9306 56.0048 27.8007 55.8489 27.7444 55.6574L26.5434 51.5269C26.5247 51.4608 26.4888 51.4015 26.4409 51.3523L24.473 49.3608C24.4662 49.3541 24.4594 49.349 24.4525 49.3439C24.4406 49.3337 24.4303 49.3236 24.4184 49.3151C24.4064 49.3066 24.3927 49.2998 24.3791 49.2914C24.3705 49.2863 24.3637 49.2812 24.3552 49.2778C24.3517 49.2761 24.3483 49.2761 24.3466 49.2744C24.3312 49.2676 24.3176 49.2625 24.3022 49.2591C24.2902 49.2558 24.28 49.2507 24.268 49.249C24.2544 49.2456 24.2407 49.2439 24.2253 49.2422C24.2134 49.2405 24.1997 49.2388 24.1878 49.2388C24.1741 49.2388 24.1604 49.2405 24.1468 49.2405C24.1348 49.2422 24.1211 49.2422 24.1092 49.2439C24.0955 49.2456 24.0801 49.2507 24.0665 49.2541C24.0545 49.2575 24.0443 49.2591 24.0323 49.2642C24.0186 49.2693 24.0067 49.2761 23.993 49.2829C23.9811 49.288 23.9708 49.293 23.9588 49.2998C23.9486 49.3066 23.9383 49.3151 23.9281 49.3219C23.9161 49.3303 23.9042 49.3388 23.8939 49.349C23.8922 49.3507 23.8888 49.3524 23.8854 49.3558C23.8786 49.3625 23.8734 49.371 23.8666 49.3778C23.8564 49.388 23.8478 49.3998 23.8393 49.4117C23.8307 49.4236 23.8222 49.4371 23.8154 49.4507C23.8102 49.4591 23.8051 49.4659 23.8017 49.4727L20.8003 55.7C20.6106 56.0915 20.146 56.2695 19.7411 56.1034C19.5259 56.0152 19.3619 55.8474 19.2816 55.6305C19.2013 55.4136 19.215 55.1796 19.3209 54.9746L21.5741 50.5901C21.5912 50.5545 21.6048 50.5172 21.6116 50.4799L22.2164 47.3308C22.2181 47.3206 22.2181 47.3104 22.2198 47.2986C22.2215 47.2884 22.2232 47.2799 22.2232 47.2698L22.3923 42.963C22.3992 42.7935 22.3001 42.6359 22.1429 42.5681C21.9858 42.5003 21.803 42.5342 21.6817 42.6545L20.6174 43.7104C20.5986 43.7291 20.5798 43.7511 20.5645 43.7732L19.4712 45.402C19.2799 45.6884 18.8989 45.7799 18.6222 45.607C18.4838 45.5206 18.3864 45.385 18.3523 45.2257C18.3164 45.0664 18.3472 44.9037 18.436 44.7664L19.8214 42.6528C20.5337 41.8613 21.3913 41.1681 22.3718 40.5935C22.9253 40.2698 23.5556 40.0986 24.198 40.0986H24.7514C25.6346 40.0986 26.4836 40.4206 27.1447 41.0071C28.7078 42.3952 29.7088 43.4461 30.2964 44.3172C30.3238 44.3579 30.3579 44.3935 30.3972 44.4206C30.6483 44.602 30.715 44.9495 30.5476 45.2105L30.5425 45.2099ZM24.748 38.5609C26.294 38.5609 27.553 37.3118 27.553 35.7779C27.553 34.244 26.294 32.9948 24.748 32.9948C23.2021 32.9948 21.9431 34.244 21.9431 35.7779C21.9431 37.3118 23.2021 38.5609 24.748 38.5609ZM24.748 33.8202C25.8362 33.8202 26.7211 34.6981 26.7211 35.7778C26.7211 36.8575 25.8362 37.7354 24.748 37.7354C23.6599 37.7354 22.775 36.8575 22.775 35.7778C22.775 34.6981 23.6599 33.8202 24.748 33.8202ZM58.5 50.6931C58.5 52.3846 57.7723 53.9727 56.4501 55.1661C55.1398 56.3475 53.3991 57 51.5508 57H32.5911C32.3605 57 32.1743 56.8153 32.1743 56.5864C32.1743 56.3576 32.3605 56.1729 32.5911 56.1729H51.5508C53.1925 56.1729 54.7333 55.5983 55.8898 54.5542C57.0361 53.5204 57.6664 52.1492 57.6664 50.6933C57.6664 47.673 54.923 45.2153 51.5493 45.2153H38.4827C34.6511 45.2153 31.5334 42.7103 31.5334 39.6307C31.5334 38.1205 32.2679 36.707 33.6038 35.651C34.9106 34.6155 36.6428 34.046 38.4825 34.046H45.6094C45.84 34.046 46.0262 34.2307 46.0262 34.4595C46.0262 34.6883 45.84 34.8731 45.6094 34.8731H38.4825C36.8306 34.8731 35.2829 35.3782 34.123 36.2968C32.9904 37.1934 32.3652 38.3764 32.3652 39.6306C32.3652 42.2544 35.1086 44.39 38.4806 44.39H51.5471C55.3788 44.39 58.4965 47.2188 58.4965 50.695L58.5 50.6931ZM48.3595 26.6965C48.2502 26.6965 48.146 26.7389 48.0691 26.8134L45.3103 29.4897C45.23 29.5677 45.1856 29.6744 45.1856 29.7846C45.1856 29.8965 45.23 30.0016 45.3103 30.0795L48.0691 32.7558C48.1477 32.8321 48.2519 32.8727 48.3595 32.8727H48.9233V34.9558C47.7053 35.3321 46.9349 36.1083 46.9349 36.9914C46.9349 38.2642 48.5167 39.2609 50.5359 39.2609C52.5551 39.2609 54.1369 38.2642 54.1369 36.9914C54.1369 36.1083 53.3665 35.3321 52.1485 34.9558V32.8727H54.8971C55.4437 32.8727 55.8879 32.4321 55.8879 31.8897V27.6745C55.8879 27.1321 55.4437 26.6915 54.8971 26.6915H52.1485V25.2135H52.7122C52.8216 25.2135 52.9258 25.1712 53.0026 25.0966L55.7615 22.4203C55.8418 22.3424 55.8862 22.2356 55.8862 22.1254C55.8862 22.0135 55.8418 21.9085 55.7615 21.8305L53.0026 19.1542C52.924 19.078 52.8198 19.0373 52.7122 19.0373H52.1485V17.4136C52.1485 17.1847 51.9623 17 51.7317 17H49.3401C49.1095 17 48.9233 17.1847 48.9233 17.4136V19.0373H46.1747C45.628 19.0373 45.1839 19.4779 45.1839 20.0203V24.2355C45.1839 24.7779 45.628 25.2186 46.1747 25.2186H48.9233V26.6965H48.3595ZM53.3051 36.9946C53.3051 37.6776 52.1674 38.4386 50.5361 38.4386C48.9047 38.4386 47.767 37.6776 47.767 36.9946C47.767 36.5505 48.2231 36.1081 48.9235 35.8335V36.6149C48.9235 37.0522 49.2822 37.4081 49.7229 37.4081H51.3492C51.7899 37.4081 52.1487 37.0522 52.1487 36.6149V35.8335C52.8491 36.1081 53.3051 36.5505 53.3051 36.9946ZM51.3167 35.2743V36.5827H49.7571V32.8759H51.3167V35.2743ZM55.0561 27.6793V31.8946C55.0561 31.981 54.9861 32.0505 54.8989 32.0505H48.5308L46.1973 29.7861L48.5308 27.5217H54.8989C54.9861 27.5217 55.0561 27.5912 55.0561 27.6776V27.6793ZM49.7572 17.8286H51.3168V19.0388H49.7572V17.8286ZM46.0178 24.2373V20.022C46.0178 19.9356 46.0878 19.8661 46.1749 19.8661H52.5431L54.8766 22.1305L52.5431 24.3949H46.1749C46.0878 24.3949 46.0178 24.3254 46.0178 24.239V24.2373ZM49.7572 25.2203H51.3168V26.6982H49.7572V25.2203Z"
+                                    fill="white"></path>
+                            </svg>
+                        </div>
+                        <h5 class="adv-title">Placement Support</h5>
+                        <p class="adv-text">100% placement support through
+                            strong industry connections.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <style>
+        .advantage-section {
+            background: #ffffff;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .section-title span {
+            color: #0a1a3a;
+        }
+
+        .adv-card {
+            background: #ffffff;
+            padding: 15px 1px;
+            border-radius: 18px;
+            transition: 0.3s ease;
+            height: 100%;
+            box-shadow: none !important;
+        }
+
+        /* REMOVE SHADOW COMPLETELY */
+        .adv-card:hover {
+            transform: translateY(-5px);
+            box-shadow: none !important;
+        }
+
+        .adv-icon {
+            width: 70px;
+            height: 70px;
+
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 15px;
+            font-size: 28px;
+        }
+
+        /* ZIG-ZAG UP/DOWN */
+        .col-6:nth-child(odd) .adv-card {
+            transform: translateY(-40px);
+        }
+
+        .col-6:nth-child(even) .adv-card {
+            transform: translateY(40px);
+        }
+
+        /* Hover override so it still slightly animates */
+        .adv-card:hover {
+            transform: translateY(-5px) !important;
+        }
+
+        .adv-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            color: #6d1b30;
+        }
+
+        .adv-text {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Responsive */
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .adv-icon {
+                width: 55px;
+                height: 55px;
+                font-size: 22px;
+            }
+
+            /* Smaller zig-zag on mobile */
+            .col-6:nth-child(odd) .adv-card {
+                transform: translateY(-10px);
+            }
+
+            .col-6:nth-child(even) .adv-card {
+                transform: translateY(10px);
+            }
+        }
+        body, html {
+    overflow-x: hidden !important;
+}
+
+.mba-cta-section {
+    width: 100%;
+    overflow: hidden !important;
+}
+
+    </style>
+
+
+
+
+
+
+
+    <section id="curriculum" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="section-title mb-5 text-center fs-1">
+                <span style="color: #003a73;">C</span>urriculum
+            </h2>
+
+            <div class="accordion" id="curriculumAcc">
+
+                <!-- Semester I (Open by default) -->
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Semester I
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#curriculumAcc">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Intelligent Economics for Managers</li>
+                                <li>Accounting for Managerial Decisions</li>
+                                <li>Marketing, Theory and Practice</li>
+                                <li>Operations Management</li>
+                                <li>Organizational Behaviour</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semester II -->
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Semester II
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#curriculumAcc">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Business Statistics</li>
+                                <li>Applied Business Research Methods</li>
+                                <li>Macroeconomic Environment and Policy</li>
+                                <li>Corporate Finance using AI</li>
+                                <li>Human Resource Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semester III -->
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Semester III
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#curriculumAcc">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Design Thinking</li>
+
+                            </ul>
+                            <h6 class="mt-2 text-primary">Marketing Electives</h6>
+                            <ul>
+                                <li>Services Marketing and Customer Experience Management</li>
+                                <li>Consumer Behaviour and Neuro Marketing</li>
+                                <li>Digital Marketing and Digital Ecosystem</li>
+                                <li>Marketing Research for start ups</li>
+                                <li>Strategic Sales and Channel Management</li>
+                            </ul>
+
+                            <h6 class="mt-2 text-primary">Finance Electives</h6>
+                            <ul>
+                                <li>Security Analysis and Portfolio Management</li>
+                                <li>Multinational Financial Management</li>
+                                <li>AI enabled Fraud detection and Risk Management</li>
+                                <li>Modern Financial Ecosystem</li>
+                                <li>Financial Architecture for New ventures</li>
+                            </ul>
+
+                            <h6 class="mt-2 text-primary">HRM Electives</h6>
+                            <ul>
+                                <li>HR Analytics using AI</li>
+                                <li>Strategic Workforce Management</li>
+                                <li>Technology Enabled Learning</li>
+                                <li>Rewards and Performance Analytics</li>
+                                <li>Diversity, Equity and Inclusion metrics</li>
+                            </ul>
+
+                            <h6 class="mt-2 text-primary">Operations Electives</h6>
+                            <ul>
+                                <li>Project Management</li>
+                                <li>Agile Supply Chain Management</li>
+                                <li>Competition in Business Ecosystem</li>
+                                <li>Greener Value chain in Operation Management</li>
+                                <li>Digital transformation for Operations</li>
+                            </ul>
+
+                            <h6 class="mt-2 text-primary">Business Analytics & AI Electives</h6>
+                            <ul>
+                                <li>Managerial Decision Analytics</li>
+                                <li>Marketing Analytics and Consumer Intelligence</li>
+                                <li>HR Analytics and Workforce Insights</li>
+                                <li>Financial Data Analytics</li>
+                                <li>Applied Business Intelligence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semester IV -->
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Semester IV
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#curriculumAcc">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Strategic Management in Digital Era</li>
+                                <li>Dissertation and viva</li>
+                            </ul>
+
+                            <h6 class="mt-2 text-primary">Marketing Electives</h6>
+                            <ul>
+                                <li>Digital Growth Strategy</li>
+                                <li>Future-Ready Retail with AI Tools</li>
+                                <li>Advertising and Integrated Brand Promotion</li>
+                                <li>Brand Equity Intelligence</li>
+                            </ul>
+
+                            <h6 class="mt-2 text-primary">Finance Electives</h6>
+                            <ul>
+                                <li>Revenue Intelligence for fixed income</li>
+                                <li>Mergers, Acquisition and corporate restructuring</li>
+                                <li>Financial analysis and Modelling</li>
+                                <li>AI and Human Biases in Finance</li>
+                            </ul>
+
+                            <h6 class="mt-2 text-primary">HRM Electives</h6>
+                            <ul>
+                                <li>HRM for Start-up Ecosystem</li>
+                                <li>HR Operation Automation</li>
+                                <li>International HRM</li>
+                                <li>Sustainable HRM</li>
+                            </ul>
+
+                            <h6 class="mt-2 text-primary">Operations Electives</h6>
+                            <ul>
+                                <li>AI Powered Lean Six Sigma</li>
+                                <li>Business block chain</li>
+                                <li>Strategic Sustainable Operation</li>
+                                <li>Business intelligence for Managers</li>
+                            </ul>
+
+                            <h6 class="mt-2 text-primary">Business Analytics & AI Electives</h6>
+                            <ul>
+                                <li>Predictive Business Modelling</li>
+                                <li>AI for Strategic Decision-Making</li>
+                                <li>Data Visualization for Business</li>
+                                <li>Capstone: Data-Driven Business Transformation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Active (expanded) accordion background */
+        .accordion-button:not(.collapsed) {
+            background-color: #8a0d1c;
+            /* change this to your desired color */
+            color: #ffffff;
+            /* optional: text color for active */
+        }
+
+        /* Optional: keep the right arrow icon same color */
+        .accordion-button:not(.collapsed)::after {
+            filter: invert(29%) sepia(88%) saturate(3767%) hue-rotate(196deg) brightness(92%) contrast(90%);
+        }
+
+        .accordion-button {
+            color: #003a73;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .accordion-button.collapsed {
+            color: #003a73;
+
+
+        }
+
+        /* Collapsed arrow (blue #003a73) */
+        .accordion-button.collapsed::after {
+            filter: invert(22%) sepia(99%) saturate(2153%) hue-rotate(190deg) brightness(91%) contrast(89%);
+        }
+
+        /* Expanded arrow (white) */
+        .accordion-button:not(.collapsed)::after {
+            filter: invert(100%);
+            /* white */
+            transform: rotate(180deg);
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+
+        .text-primary {
+            color: #003a73 !important;
+        }
+
+        .accordion-body ul {
+            padding-left: 20px;
+        }
+
+        .accordion-body ul li {
+            padding: 3px 0;
+            line-height: 1.5;
+        }
+    </style>
+
+    
+    <section class="middle-feature-section py-1">
+        <div class="container">
+            <h2 class="section-title mb-5 fs-1 mt-1 text-center">
+                Program
+                <span style="color: #003a73;">&</span>
+                Outcomes
+            </h2>
+
+            <div class="row align-items-center">
+
+                <!-- LEFT FEATURES -->
+                <div class="col-md-3 text-center text-md-end feature-col">
+                    <div class="feature-item mb-4">
+                        <svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M64.7953 0.719727H7.2047C3.22997 0.719727 0 3.90598 0 7.82692V20.9586C0 24.8796 3.22997 28.0658 7.2047 28.0658H23.3859C23.4486 34.8637 29.0854 40.3932 36 40.3932C42.9146 40.3932 48.5514 34.8637 48.6141 28.0581H64.7953C68.77 28.0581 72 24.8718 72 20.9509V7.82692C71.9922 3.90598 68.7622 0.719727 64.7953 0.719727ZM36 38.599C30.0497 38.599 25.2047 33.8196 25.2047 27.9498C25.2047 22.08 30.0497 17.2929 36 17.2929C41.9503 17.2929 46.7953 22.0722 46.7953 27.9421C46.7953 33.8119 41.9503 38.599 36 38.599ZM70.1812 20.9509C70.1812 23.8819 67.7665 26.2639 64.7953 26.2639H48.4965C47.6577 20.193 42.3815 15.4987 36 15.4987C29.6185 15.4987 24.3423 20.193 23.5035 26.2639H7.2047C4.23345 26.2639 1.81882 23.8819 1.81882 20.9509V7.82692C1.81882 4.89588 4.23345 2.51393 7.2047 2.51393H64.7875C67.7587 2.51393 70.1733 4.89588 70.1733 7.82692V20.9509H70.1812ZM48.5906 45.4123C44.4042 44.6467 26.2082 44.6544 22.4373 45.6289C16.6986 47.106 12.6847 52.0323 12.6847 57.6005V71.8226C12.6847 72.3176 13.0923 72.7197 13.5941 72.7197H58.3981C58.8998 72.7197 59.3075 72.3176 59.3075 71.8226V57.6005C59.3153 51.6688 54.8075 46.5414 48.5906 45.4123ZM33.0052 49.2946L31.7979 53.7492L26.2317 46.9513C27.7761 46.843 29.6733 46.758 31.7117 46.7116L33.0052 49.2946ZM34.6672 50.0912H37.3249L40.2256 60.7713L36 65.5352L31.7665 60.7713L34.6672 50.0912ZM38.9948 49.2946L40.304 46.6806C42.3815 46.7193 44.2944 46.7889 45.8153 46.9049L40.2099 53.7569L38.9948 49.2946ZM38.2892 46.6574L37.466 48.3047H34.5418L33.7265 46.6729C35.2317 46.6497 36.784 46.642 38.2892 46.6574ZM57.4965 70.9255H50.9817V60.4387C50.9817 59.9438 50.574 59.5416 50.0723 59.5416C49.5706 59.5416 49.1629 59.9438 49.1629 60.4387V70.9255H22.8371V60.4387C22.8371 59.9438 22.4294 59.5416 21.9277 59.5416C21.426 59.5416 21.0183 59.9438 21.0183 60.4387V70.9255H14.5035V57.6005C14.5035 52.8443 17.953 48.6295 22.892 47.3535C23.1742 47.2838 23.574 47.2142 24.0523 47.1524L31.2099 55.8914L29.885 60.7713C29.8066 61.0574 29.8772 61.3668 30.081 61.591L35.3101 67.4841C35.4826 67.6774 35.7335 67.7934 35.9922 67.7934C36.2509 67.7934 36.5017 67.6851 36.6742 67.4841L41.9033 61.591C42.0993 61.3668 42.1777 61.0574 42.0993 60.7713L40.7744 55.8914L47.9556 47.1214C48.0575 47.1369 48.1594 47.1524 48.2535 47.1678C53.6002 48.1423 57.4887 52.5272 57.4887 57.5928V70.9255H57.4965ZM14.0645 3.83637C8.16115 3.83637 3.36324 8.56935 3.36324 14.3928C3.36324 20.2162 8.16115 24.9492 14.0645 24.9492C19.9678 24.9492 24.7657 20.2162 24.7657 14.3928C24.7657 8.56935 19.9678 3.83637 14.0645 3.83637ZM14.0645 23.1472C9.16463 23.1472 5.18206 19.2185 5.18206 14.385C5.18206 9.55152 9.16463 5.62284 14.0645 5.62284C18.9643 5.62284 22.9469 9.55152 22.9469 14.385C22.9469 19.2185 18.9643 23.1472 14.0645 23.1472ZM19.1524 10.959C19.5052 11.3071 19.5052 11.8793 19.1524 12.2274L13.4843 17.8188C13.304 17.9966 13.0767 18.0817 12.8415 18.0817C12.6063 18.0817 12.3789 17.9966 12.1986 17.8188L8.96864 14.6325C8.61585 14.2845 8.61585 13.7122 8.96864 13.3642C9.32143 13.0162 9.90157 13.0162 10.2544 13.3642L12.8415 15.9163L17.8667 10.959C18.2274 10.611 18.7997 10.611 19.1524 10.959ZM57.9355 3.83637C52.0322 3.83637 47.2343 8.56935 47.2343 14.3928C47.2343 20.2162 52.0322 24.9492 57.9355 24.9492C63.8389 24.9492 68.6368 20.2162 68.6368 14.3928C68.6368 8.56935 63.831 3.83637 57.9355 3.83637ZM57.9355 23.1472C53.0357 23.1472 49.0531 19.2185 49.0531 14.385C49.0531 9.55152 53.0357 5.62284 57.9355 5.62284C62.8354 5.62284 66.8179 9.55152 66.8179 14.385C66.8179 19.2185 62.8354 23.1472 57.9355 23.1472ZM62.5296 11.1214L59.2134 14.3928L62.5296 17.6641C62.8824 18.0121 62.8824 18.5844 62.5296 18.9324C62.3493 19.1103 62.1219 19.1953 61.8868 19.1953C61.6516 19.1953 61.4242 19.1103 61.2439 18.9324L57.9277 15.6611L54.6115 18.9324C54.4312 19.1103 54.2038 19.1953 53.9686 19.1953C53.7334 19.1953 53.5061 19.1103 53.3258 18.9324C52.973 18.5844 52.973 18.0121 53.3258 17.6641L56.642 14.3928L53.3258 11.1214C52.973 10.7734 52.973 10.2011 53.3258 9.85313C53.6786 9.50512 54.2587 9.50512 54.6115 9.85313L57.9277 13.1245L61.2439 9.85313C61.5967 9.50512 62.1768 9.50512 62.5296 9.85313C62.8902 10.2011 62.8902 10.7734 62.5296 11.1214Z"
+                                fill="black"></path>
+                        </svg>
+                        <h5 class="text-center mt-3">Enhanced analytical and strategic competencies
+                            for business decision-making
+                        </h5>
+                    </div>
+
+                    <div class="feature-item">
+                        <svg width="81" height="80" viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M35.1021 31.6041C35.416 32.1506 35.9087 32.5082 36.5229 32.643C37.1371 32.778 37.7344 32.6565 38.2508 32.2956L46.8803 26.2136L47.9636 34.7277L40.8393 54.6638C40.5423 55.497 40.6469 56.364 41.1397 57.0993C41.6324 57.8347 42.3917 58.2665 43.276 58.3103L43.4177 58.317C43.465 58.3204 43.5156 58.3204 43.5628 58.3204C44.6732 58.3204 45.6519 57.6693 46.0839 56.6338L54.0822 37.3454L60.0084 38.4349C60.0928 38.4518 60.1502 38.5159 60.1535 38.6036L60.4269 44.8576C60.4843 46.2103 61.5913 47.2796 62.9446 47.2965L63.1065 47.2999C63.8288 47.3066 64.4767 47.0367 64.9762 46.5173C65.4758 45.9978 65.7221 45.34 65.685 44.6181L65.2125 35.429C65.1686 34.5992 64.6286 33.9077 63.8355 33.6648L58.3885 31.9849L57.3052 23.5585L68.344 18.7482C68.6072 18.6335 68.8401 18.4783 69.0358 18.2894L77.3142 39.5649C77.3952 39.774 77.5977 39.9056 77.8103 39.9056C77.8745 39.9056 77.9386 39.8955 78.0027 39.8685C78.2761 39.7639 78.4144 39.4536 78.3064 39.1803L69.7108 17.0819C69.8221 16.5894 69.7715 16.0868 69.5589 15.6112L69.5015 15.483C69.326 15.0917 69.0527 14.7712 68.7219 14.5351L63.1974 0.337325C63.1839 0.303593 63.167 0.269861 63.1467 0.239502C63.1434 0.236128 63.1434 0.236128 63.14 0.232755C63.1198 0.205769 63.1029 0.178783 63.0793 0.15517C63.0725 0.148423 63.0658 0.14505 63.0624 0.138304C63.0421 0.118064 63.0219 0.101198 62.9983 0.0877046C62.9881 0.0809585 62.978 0.0775846 62.9679 0.0708385C62.9476 0.0573454 62.924 0.0472254 62.9038 0.0371053C62.9004 0.0371053 62.897 0.0337323 62.897 0.0337323C62.8869 0.0303592 62.8768 0.0303592 62.8666 0.0269862C62.8464 0.0202392 62.8228 0.0134922 62.8025 0.0101192C62.789 0.00674614 62.7755 0.00674612 62.762 0.00337306C62.7418 1.00531e-08 62.7181 0 62.6979 0C62.681 0 62.6675 0.00337306 62.654 0.00337306C62.6338 0.00674612 62.6135 0.00674614 62.5933 0.0101192C62.5764 0.0134922 62.5595 0.0202392 62.5427 0.0236123C62.5325 0.0269862 62.519 0.0303592 62.5089 0.0337323C62.5022 0.0371053 62.4988 0.0404784 62.4887 0.0438523C62.4819 0.0472254 62.4752 0.0472254 62.4684 0.0505984L47.2852 7.36726C47.0827 7.46508 46.9646 7.68097 46.9849 7.9036C47.0085 8.12624 47.1705 8.31177 47.3899 8.36575L66.9973 13.058L67.3989 14.0935C67.0716 14.0834 66.7409 14.1374 66.4202 14.2723L56.1642 18.5665C56.36 18.128 56.4983 17.6557 56.5658 17.1633C56.7379 15.8848 56.4308 14.6165 55.6985 13.591C54.9594 12.5588 53.8761 11.8976 52.6477 11.729C50.1267 11.3883 47.7812 13.2638 47.4201 15.9186C47.2243 17.3658 47.6563 18.7454 48.5 19.7608L47.2817 19.9159C47.1939 19.926 47.1062 19.9598 47.0353 20.0137L35.5136 28.4435C34.6125 29.1047 34.3526 30.3292 34.9129 31.2973L35.1021 31.6041ZM49.0973 7.67753L62.4144 1.26156L66.535 11.8505L49.0973 7.67753ZM48.4831 16.0601C48.743 14.1508 50.2988 12.7509 52.0604 12.7509C52.2089 12.7509 52.3608 12.761 52.5127 12.7813C53.4475 12.9095 54.2743 13.4155 54.8413 14.2081C55.415 15.011 55.658 16.0061 55.5196 17.0147C55.3812 18.0233 54.8851 18.9206 54.1157 19.5413C53.3563 20.1519 52.4249 20.4217 51.49 20.2935C49.5495 20.027 48.1997 18.1312 48.4831 16.0601ZM36.1484 29.3001L47.5587 20.9513L49.5667 20.6949C50.0932 21.0288 50.6905 21.2582 51.3419 21.3493C51.541 21.3763 51.7435 21.3898 51.9426 21.3898C52.9618 21.3898 53.9506 21.0356 54.7774 20.371C54.9293 20.2496 55.071 20.118 55.206 19.9797L55.6245 19.9258C55.6717 19.919 55.719 19.9055 55.7628 19.8887L66.8353 15.2538C67.4799 14.9839 68.2393 15.2841 68.5261 15.9217L68.5835 16.0499C68.7319 16.3838 68.7421 16.711 68.6105 17.0518C68.4788 17.3925 68.2527 17.6286 67.9152 17.7737L56.5084 22.7425C56.2924 22.8369 56.1642 23.0629 56.1912 23.2991L57.369 32.4606C57.396 32.6663 57.5411 32.8417 57.7402 32.9024L63.5146 34.6802C63.8824 34.7915 64.1187 35.1018 64.1389 35.483L64.6182 44.6782C64.6384 45.1099 64.5068 45.4709 64.2064 45.7845C63.9128 46.0915 63.5618 46.2399 63.14 46.2399H63.1197L62.9577 46.2366C62.168 46.2264 61.5268 45.6024 61.4931 44.8164L61.2197 38.5624C61.1961 37.9788 60.7776 37.4998 60.2038 37.3952L53.8524 36.228C53.6027 36.1842 53.3597 36.3157 53.2652 36.5485L45.1015 56.2315C44.8247 56.9028 44.2037 57.2941 43.4748 57.2604L43.3331 57.2536C42.7864 57.2266 42.3342 56.9703 42.0304 56.5149C41.7267 56.0595 41.6625 55.5434 41.8482 55.0272L49.0129 34.9694C49.0399 34.8918 49.0501 34.8041 49.0399 34.7231L47.8284 25.2042C47.8048 25.0186 47.6867 24.8601 47.5146 24.7825C47.3424 24.7083 47.1467 24.7252 46.9915 24.8331L37.64 31.4245C37.37 31.6167 37.0798 31.6741 36.7558 31.6032C36.4318 31.5324 36.1922 31.357 36.0269 31.0703L35.848 30.7565C35.5544 30.2641 35.6861 29.6374 36.1484 29.3001ZM13.3175 50.997L6.02787 71.3951C5.76801 72.117 5.8625 72.8658 6.28773 73.5067C6.71296 74.1443 7.37104 74.5187 8.13711 74.5558L9.03148 74.5996C9.07198 74.603 9.11585 74.603 9.15635 74.603C10.1182 74.603 10.9653 74.0397 11.3365 73.1424L19.3922 53.7193L24.1777 55.7837C24.2519 55.8174 24.2924 55.8815 24.2823 55.9625L23.577 63.4478C23.5129 64.1224 23.7187 64.7465 24.1743 65.2524C24.6299 65.7584 25.2273 66.0283 25.9056 66.035L26.4895 66.0418H26.5198C27.7179 66.0418 28.727 65.1513 28.8687 63.9571L30.1681 53.1764C30.2659 52.3601 29.8778 51.6112 29.1522 51.2233L23.7424 48.3122L22.4059 39.383L33.4551 35.0484C33.4618 35.045 33.4686 35.0416 33.4753 35.0383C34.5822 34.5491 35.1425 33.3111 34.7746 32.1575L34.751 32.0799C34.5451 31.4289 34.1098 30.9364 33.4888 30.6497C32.8982 30.3765 32.2637 30.363 31.6023 30.6059L21.3463 34.3806C21.4948 34.0027 21.5994 33.6047 21.6568 33.1932C21.8323 31.9147 21.5218 30.6464 20.7894 29.6209C20.0504 28.5887 18.967 27.9275 17.7386 27.7589C15.2142 27.4148 12.8721 29.2971 12.511 31.9485C12.2545 33.8409 13.0746 35.622 14.4819 36.6137L12.5481 37.231C12.4941 37.2479 12.4435 37.2749 12.3962 37.3086L0.975562 45.6709C0.00698046 46.3793 -0.279853 47.6578 0.293849 48.7136L0.354595 48.8283C0.688704 49.4422 1.22866 49.8504 1.91041 50.0056C2.5955 50.1608 3.2536 50.0258 3.82053 49.6143L12.2475 43.5255L13.3175 50.997ZM13.5706 32.0963C13.8305 30.1871 15.3863 28.7872 17.1479 28.7872C17.2964 28.7872 17.4483 28.7973 17.6001 28.8175C18.5349 28.9457 19.3618 29.4517 19.9288 30.2444C20.5025 31.0472 20.7455 32.0423 20.6071 33.051C20.4687 34.0596 19.9726 34.9568 19.2032 35.5775C18.4438 36.1881 17.5124 36.4579 16.5775 36.3298C14.637 36.0667 13.2872 34.1675 13.5706 32.0963ZM3.19622 48.75C2.87899 48.9794 2.52801 49.0503 2.14669 48.9659C1.76533 48.8782 1.47847 48.6623 1.29286 48.3182L1.23211 48.2036C0.914875 47.6234 1.0735 46.9217 1.60671 46.5304L12.96 38.2254L15.913 37.2843C16.0817 37.3282 16.2572 37.3653 16.4361 37.3889C16.6352 37.4159 16.8377 37.4294 17.0368 37.4294C18.056 37.4294 19.0448 37.0752 19.8716 36.4106C20.091 36.2318 20.2935 36.0396 20.4757 35.827L20.8199 35.7157C20.8267 35.7124 20.8368 35.7124 20.8436 35.709L31.9774 31.6105C32.3756 31.4654 32.7165 31.4688 33.0472 31.6206C33.3982 31.7825 33.6243 32.0389 33.7424 32.4065L33.766 32.4841C33.9652 33.1149 33.6648 33.7929 33.0607 34.0662L21.6271 38.5492C21.3942 38.6403 21.2592 38.8798 21.2964 39.1227L22.7341 48.7367C22.7577 48.902 22.8623 49.047 23.0074 49.128L28.6536 52.1639C28.9877 52.3427 29.1598 52.6766 29.1159 53.051L27.8166 63.8317C27.739 64.4861 27.1855 64.9786 26.5241 64.9786H26.5072L25.9233 64.9718C25.5386 64.9684 25.2281 64.8268 24.9716 64.54C24.7151 64.2533 24.6071 63.9295 24.6442 63.5483L25.3496 56.063C25.4002 55.5267 25.0998 55.0207 24.6037 54.8048L19.3188 52.5245C19.1871 52.4672 19.0386 52.4672 18.907 52.5211C18.7754 52.5751 18.6708 52.6797 18.6134 52.8112L10.3552 72.7335C10.1392 73.2563 9.64986 73.5633 9.08623 73.5363L8.19186 73.4925C7.76326 73.4722 7.41227 73.2698 7.17602 72.9156C6.93978 72.5581 6.88916 72.1567 7.03428 71.7552L14.3678 51.2319C14.3982 51.1509 14.4049 51.0632 14.3948 50.9789L13.1833 42.4985C13.1563 42.313 13.0348 42.1578 12.8627 42.0836C12.6905 42.0094 12.4948 42.033 12.3429 42.1409L3.19622 48.75ZM80.0849 40.8465C79.5145 40.5294 78.8396 40.5429 78.2861 40.8903L67.9489 47.2962L57.578 49.9274C57.5003 49.9476 57.4295 49.9847 57.3687 50.032L47.4842 58.2391L37.2956 60.9613C37.2011 60.9849 37.1167 61.0355 37.0492 61.1064L31.2141 67.1445L21.3598 69.7993C21.2788 69.8195 21.2046 69.86 21.1405 69.9173L14.1107 76.2523L4.59682 78.9543C4.34034 79.0285 4.17834 79.2781 4.21546 79.5412C4.25258 79.8044 4.4787 80 4.74531 80H80.4668C80.7604 80 81 79.7605 81 79.467V42.398C81 41.7436 80.6553 41.1636 80.0849 40.8465ZM79.933 78.9337H8.56591L14.5191 77.2403C14.5967 77.2167 14.671 77.1796 14.7283 77.1223L21.7581 70.794L31.6296 68.1325C31.7241 68.1089 31.8085 68.0583 31.876 67.9875L37.7077 61.9493L47.8661 59.2372C47.9404 59.217 48.0112 59.1799 48.0686 59.1327L57.9531 50.9289L68.2869 48.3044C68.3409 48.291 68.3915 48.2707 68.4354 48.2404L78.84 41.7906C79.0695 41.6489 79.326 41.6422 79.5589 41.7738C79.7951 41.9053 79.9234 42.1246 79.9234 42.3944L79.933 78.9337Z"
+                                fill="black"></path>
+                        </svg>
+                        <h5 class="text-center mt-3">Nurture managerial and leadership skils
+                        </h5>
+                    </div>
+                </div>
+
+                <!-- CENTER IMAGE WITH CLIP-PATH -->
+                <div class="col-md-6 my-4 my-md-0 text-center">
+                    <div class="clipped-images">
+                        <img src="https://cdn.pixabay.com/photo/2023/11/06/14/44/ai-generated-8369771_960_720.png"
+                            alt="">
+                    </div>
+                </div>
+
+                <!-- RIGHT FEATURES -->
+                <div class="col-md-3 text-center text-md-start feature-col">
+                    <div class="feature-item mb-4">
+                        <svg width="81" height="80" viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M35.1021 31.6041C35.416 32.1506 35.9087 32.5082 36.5229 32.643C37.1371 32.778 37.7344 32.6565 38.2508 32.2956L46.8803 26.2136L47.9636 34.7277L40.8393 54.6638C40.5423 55.497 40.6469 56.364 41.1397 57.0993C41.6324 57.8347 42.3917 58.2665 43.276 58.3103L43.4177 58.317C43.465 58.3204 43.5156 58.3204 43.5628 58.3204C44.6732 58.3204 45.6519 57.6693 46.0839 56.6338L54.0822 37.3454L60.0084 38.4349C60.0928 38.4518 60.1502 38.5159 60.1535 38.6036L60.4269 44.8576C60.4843 46.2103 61.5913 47.2796 62.9446 47.2965L63.1065 47.2999C63.8288 47.3066 64.4767 47.0367 64.9762 46.5173C65.4758 45.9978 65.7221 45.34 65.685 44.6181L65.2125 35.429C65.1686 34.5992 64.6286 33.9077 63.8355 33.6648L58.3885 31.9849L57.3052 23.5585L68.344 18.7482C68.6072 18.6335 68.8401 18.4783 69.0358 18.2894L77.3142 39.5649C77.3952 39.774 77.5977 39.9056 77.8103 39.9056C77.8745 39.9056 77.9386 39.8955 78.0027 39.8685C78.2761 39.7639 78.4144 39.4536 78.3064 39.1803L69.7108 17.0819C69.8221 16.5894 69.7715 16.0868 69.5589 15.6112L69.5015 15.483C69.326 15.0917 69.0527 14.7712 68.7219 14.5351L63.1974 0.337325C63.1839 0.303593 63.167 0.269861 63.1467 0.239502C63.1434 0.236128 63.1434 0.236128 63.14 0.232755C63.1198 0.205769 63.1029 0.178783 63.0793 0.15517C63.0725 0.148423 63.0658 0.14505 63.0624 0.138304C63.0421 0.118064 63.0219 0.101198 62.9983 0.0877046C62.9881 0.0809585 62.978 0.0775846 62.9679 0.0708385C62.9476 0.0573454 62.924 0.0472254 62.9038 0.0371053C62.9004 0.0371053 62.897 0.0337323 62.897 0.0337323C62.8869 0.0303592 62.8768 0.0303592 62.8666 0.0269862C62.8464 0.0202392 62.8228 0.0134922 62.8025 0.0101192C62.789 0.00674614 62.7755 0.00674612 62.762 0.00337306C62.7418 1.00531e-08 62.7181 0 62.6979 0C62.681 0 62.6675 0.00337306 62.654 0.00337306C62.6338 0.00674612 62.6135 0.00674614 62.5933 0.0101192C62.5764 0.0134922 62.5595 0.0202392 62.5427 0.0236123C62.5325 0.0269862 62.519 0.0303592 62.5089 0.0337323C62.5022 0.0371053 62.4988 0.0404784 62.4887 0.0438523C62.4819 0.0472254 62.4752 0.0472254 62.4684 0.0505984L47.2852 7.36726C47.0827 7.46508 46.9646 7.68097 46.9849 7.9036C47.0085 8.12624 47.1705 8.31177 47.3899 8.36575L66.9973 13.058L67.3989 14.0935C67.0716 14.0834 66.7409 14.1374 66.4202 14.2723L56.1642 18.5665C56.36 18.128 56.4983 17.6557 56.5658 17.1633C56.7379 15.8848 56.4308 14.6165 55.6985 13.591C54.9594 12.5588 53.8761 11.8976 52.6477 11.729C50.1267 11.3883 47.7812 13.2638 47.4201 15.9186C47.2243 17.3658 47.6563 18.7454 48.5 19.7608L47.2817 19.9159C47.1939 19.926 47.1062 19.9598 47.0353 20.0137L35.5136 28.4435C34.6125 29.1047 34.3526 30.3292 34.9129 31.2973L35.1021 31.6041ZM49.0973 7.67753L62.4144 1.26156L66.535 11.8505L49.0973 7.67753ZM48.4831 16.0601C48.743 14.1508 50.2988 12.7509 52.0604 12.7509C52.2089 12.7509 52.3608 12.761 52.5127 12.7813C53.4475 12.9095 54.2743 13.4155 54.8413 14.2081C55.415 15.011 55.658 16.0061 55.5196 17.0147C55.3812 18.0233 54.8851 18.9206 54.1157 19.5413C53.3563 20.1519 52.4249 20.4217 51.49 20.2935C49.5495 20.027 48.1997 18.1312 48.4831 16.0601ZM36.1484 29.3001L47.5587 20.9513L49.5667 20.6949C50.0932 21.0288 50.6905 21.2582 51.3419 21.3493C51.541 21.3763 51.7435 21.3898 51.9426 21.3898C52.9618 21.3898 53.9506 21.0356 54.7774 20.371C54.9293 20.2496 55.071 20.118 55.206 19.9797L55.6245 19.9258C55.6717 19.919 55.719 19.9055 55.7628 19.8887L66.8353 15.2538C67.4799 14.9839 68.2393 15.2841 68.5261 15.9217L68.5835 16.0499C68.7319 16.3838 68.7421 16.711 68.6105 17.0518C68.4788 17.3925 68.2527 17.6286 67.9152 17.7737L56.5084 22.7425C56.2924 22.8369 56.1642 23.0629 56.1912 23.2991L57.369 32.4606C57.396 32.6663 57.5411 32.8417 57.7402 32.9024L63.5146 34.6802C63.8824 34.7915 64.1187 35.1018 64.1389 35.483L64.6182 44.6782C64.6384 45.1099 64.5068 45.4709 64.2064 45.7845C63.9128 46.0915 63.5618 46.2399 63.14 46.2399H63.1197L62.9577 46.2366C62.168 46.2264 61.5268 45.6024 61.4931 44.8164L61.2197 38.5624C61.1961 37.9788 60.7776 37.4998 60.2038 37.3952L53.8524 36.228C53.6027 36.1842 53.3597 36.3157 53.2652 36.5485L45.1015 56.2315C44.8247 56.9028 44.2037 57.2941 43.4748 57.2604L43.3331 57.2536C42.7864 57.2266 42.3342 56.9703 42.0304 56.5149C41.7267 56.0595 41.6625 55.5434 41.8482 55.0272L49.0129 34.9694C49.0399 34.8918 49.0501 34.8041 49.0399 34.7231L47.8284 25.2042C47.8048 25.0186 47.6867 24.8601 47.5146 24.7825C47.3424 24.7083 47.1467 24.7252 46.9915 24.8331L37.64 31.4245C37.37 31.6167 37.0798 31.6741 36.7558 31.6032C36.4318 31.5324 36.1922 31.357 36.0269 31.0703L35.848 30.7565C35.5544 30.2641 35.6861 29.6374 36.1484 29.3001ZM13.3175 50.997L6.02787 71.3951C5.76801 72.117 5.8625 72.8658 6.28773 73.5067C6.71296 74.1443 7.37104 74.5187 8.13711 74.5558L9.03148 74.5996C9.07198 74.603 9.11585 74.603 9.15635 74.603C10.1182 74.603 10.9653 74.0397 11.3365 73.1424L19.3922 53.7193L24.1777 55.7837C24.2519 55.8174 24.2924 55.8815 24.2823 55.9625L23.577 63.4478C23.5129 64.1224 23.7187 64.7465 24.1743 65.2524C24.6299 65.7584 25.2273 66.0283 25.9056 66.035L26.4895 66.0418H26.5198C27.7179 66.0418 28.727 65.1513 28.8687 63.9571L30.1681 53.1764C30.2659 52.3601 29.8778 51.6112 29.1522 51.2233L23.7424 48.3122L22.4059 39.383L33.4551 35.0484C33.4618 35.045 33.4686 35.0416 33.4753 35.0383C34.5822 34.5491 35.1425 33.3111 34.7746 32.1575L34.751 32.0799C34.5451 31.4289 34.1098 30.9364 33.4888 30.6497C32.8982 30.3765 32.2637 30.363 31.6023 30.6059L21.3463 34.3806C21.4948 34.0027 21.5994 33.6047 21.6568 33.1932C21.8323 31.9147 21.5218 30.6464 20.7894 29.6209C20.0504 28.5887 18.967 27.9275 17.7386 27.7589C15.2142 27.4148 12.8721 29.2971 12.511 31.9485C12.2545 33.8409 13.0746 35.622 14.4819 36.6137L12.5481 37.231C12.4941 37.2479 12.4435 37.2749 12.3962 37.3086L0.975562 45.6709C0.00698046 46.3793 -0.279853 47.6578 0.293849 48.7136L0.354595 48.8283C0.688704 49.4422 1.22866 49.8504 1.91041 50.0056C2.5955 50.1608 3.2536 50.0258 3.82053 49.6143L12.2475 43.5255L13.3175 50.997ZM13.5706 32.0963C13.8305 30.1871 15.3863 28.7872 17.1479 28.7872C17.2964 28.7872 17.4483 28.7973 17.6001 28.8175C18.5349 28.9457 19.3618 29.4517 19.9288 30.2444C20.5025 31.0472 20.7455 32.0423 20.6071 33.051C20.4687 34.0596 19.9726 34.9568 19.2032 35.5775C18.4438 36.1881 17.5124 36.4579 16.5775 36.3298C14.637 36.0667 13.2872 34.1675 13.5706 32.0963ZM3.19622 48.75C2.87899 48.9794 2.52801 49.0503 2.14669 48.9659C1.76533 48.8782 1.47847 48.6623 1.29286 48.3182L1.23211 48.2036C0.914875 47.6234 1.0735 46.9217 1.60671 46.5304L12.96 38.2254L15.913 37.2843C16.0817 37.3282 16.2572 37.3653 16.4361 37.3889C16.6352 37.4159 16.8377 37.4294 17.0368 37.4294C18.056 37.4294 19.0448 37.0752 19.8716 36.4106C20.091 36.2318 20.2935 36.0396 20.4757 35.827L20.8199 35.7157C20.8267 35.7124 20.8368 35.7124 20.8436 35.709L31.9774 31.6105C32.3756 31.4654 32.7165 31.4688 33.0472 31.6206C33.3982 31.7825 33.6243 32.0389 33.7424 32.4065L33.766 32.4841C33.9652 33.1149 33.6648 33.7929 33.0607 34.0662L21.6271 38.5492C21.3942 38.6403 21.2592 38.8798 21.2964 39.1227L22.7341 48.7367C22.7577 48.902 22.8623 49.047 23.0074 49.128L28.6536 52.1639C28.9877 52.3427 29.1598 52.6766 29.1159 53.051L27.8166 63.8317C27.739 64.4861 27.1855 64.9786 26.5241 64.9786H26.5072L25.9233 64.9718C25.5386 64.9684 25.2281 64.8268 24.9716 64.54C24.7151 64.2533 24.6071 63.9295 24.6442 63.5483L25.3496 56.063C25.4002 55.5267 25.0998 55.0207 24.6037 54.8048L19.3188 52.5245C19.1871 52.4672 19.0386 52.4672 18.907 52.5211C18.7754 52.5751 18.6708 52.6797 18.6134 52.8112L10.3552 72.7335C10.1392 73.2563 9.64986 73.5633 9.08623 73.5363L8.19186 73.4925C7.76326 73.4722 7.41227 73.2698 7.17602 72.9156C6.93978 72.5581 6.88916 72.1567 7.03428 71.7552L14.3678 51.2319C14.3982 51.1509 14.4049 51.0632 14.3948 50.9789L13.1833 42.4985C13.1563 42.313 13.0348 42.1578 12.8627 42.0836C12.6905 42.0094 12.4948 42.033 12.3429 42.1409L3.19622 48.75ZM80.0849 40.8465C79.5145 40.5294 78.8396 40.5429 78.2861 40.8903L67.9489 47.2962L57.578 49.9274C57.5003 49.9476 57.4295 49.9847 57.3687 50.032L47.4842 58.2391L37.2956 60.9613C37.2011 60.9849 37.1167 61.0355 37.0492 61.1064L31.2141 67.1445L21.3598 69.7993C21.2788 69.8195 21.2046 69.86 21.1405 69.9173L14.1107 76.2523L4.59682 78.9543C4.34034 79.0285 4.17834 79.2781 4.21546 79.5412C4.25258 79.8044 4.4787 80 4.74531 80H80.4668C80.7604 80 81 79.7605 81 79.467V42.398C81 41.7436 80.6553 41.1636 80.0849 40.8465ZM79.933 78.9337H8.56591L14.5191 77.2403C14.5967 77.2167 14.671 77.1796 14.7283 77.1223L21.7581 70.794L31.6296 68.1325C31.7241 68.1089 31.8085 68.0583 31.876 67.9875L37.7077 61.9493L47.8661 59.2372C47.9404 59.217 48.0112 59.1799 48.0686 59.1327L57.9531 50.9289L68.2869 48.3044C68.3409 48.291 68.3915 48.2707 68.4354 48.2404L78.84 41.7906C79.0695 41.6489 79.326 41.6422 79.5589 41.7738C79.7951 41.9053 79.9234 42.1246 79.9234 42.3944L79.933 78.9337Z"
+                                fill="black"></path>
+                        </svg>
+                        <h5 class="text-center mt-3">Learn global business perspectives
+                        </h5>
+                    </div>
+
+                    <div class="feature-item">
+                        <svg width="68" height="81" viewBox="0 0 68 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12.451 57.45L18.6785 53.7538V53.7502C21.1572 52.08 24.1599 51.3539 27.1299 51.7061V48.315H24.2399H24.2435C22.3837 48.3114 20.8804 46.8119 20.8768 44.9566V28.1313V28.1349C20.895 22.8666 25.0552 18.539 30.3323 18.3104C29.7318 17.9291 29.1785 17.4862 28.6763 16.9851C25.8847 14.2003 25.0476 10.0105 26.558 6.37243C28.0721 2.73438 31.6281 0.359863 35.5772 0.359863C39.5263 0.359863 43.0859 2.73438 44.5964 6.37243C46.1068 10.0105 45.2733 14.2003 42.4817 16.9851C41.9758 17.4862 41.4226 17.9291 40.8221 18.3104C46.0997 18.5427 50.2599 22.8669 50.2776 28.1349V31.94H52.3486L52.345 31.9363C54.1357 31.9436 55.5843 33.385 55.588 35.1714V36.5075H59.4533C61.3095 36.5111 62.8127 38.0106 62.82 39.8623V45.4864C62.8164 46.5865 62.2741 47.614 61.3714 48.2421V54.7737V54.8936L61.9319 54.4942C61.9501 54.4797 61.9719 54.4688 61.9938 54.4542C63.0565 53.6664 64.4142 53.3832 65.7063 53.6772C66.285 53.837 66.8055 54.1601 67.2059 54.6067C67.599 55.0533 67.861 55.6015 67.9629 56.1861C68.134 57.5294 67.7081 58.8801 66.7909 59.8786C66.7764 59.8931 66.7655 59.9076 66.7509 59.9222L57.1752 69.8229C56.1052 70.952 54.7621 71.7835 53.2735 72.241L42.5144 75.6394C40.4434 76.3219 38.1941 76.2348 36.1777 75.3925L22.5656 69.8955C22.1616 69.7285 21.7212 69.674 21.2917 69.7321C20.8004 69.8047 20.3309 69.9899 19.9231 70.2694L16.5054 72.5133C16.9131 74.089 16.6838 75.7628 15.8649 77.1751C15.8539 77.1897 15.8467 77.2042 15.8357 77.2187C15.0132 78.6202 13.6701 79.6441 12.0942 80.0688L11.7812 80.1524C10.1906 80.5735 8.49455 80.3484 7.06775 79.5242C7.05319 79.517 7.03863 79.5061 7.02407 79.4988V79.4952C5.61553 78.6746 4.5891 77.3349 4.16692 75.7628L0.210571 61.0288C-0.215272 59.4422 0.0103912 57.7503 0.836602 56.327C1.65917 54.9001 3.01673 53.8581 4.60734 53.4333L4.91672 53.3498C6.51087 52.925 8.20695 53.1501 9.63375 53.9779L9.67743 54.0033C10.995 54.773 11.9814 56.0002 12.4509 57.4525L12.451 57.45ZM47.2718 44.6511H50.9333L50.9297 44.6475C52.4948 44.6511 53.8269 45.773 54.0926 47.3089H59.4538C59.7341 47.3089 60.0071 47.2471 60.2546 47.1237L60.2655 47.1201H60.2728H60.2691C60.4475 47.0293 60.6076 46.9131 60.7459 46.7752C61.0881 46.4339 61.281 45.9728 61.281 45.4899V39.8622C61.281 38.8565 60.462 38.0396 59.4539 38.036H38.7474C37.7392 38.0396 36.9239 38.8529 36.9203 39.8586V45.4826C36.9203 45.9655 37.1132 46.4302 37.4553 46.7715C37.5972 46.9131 37.7574 47.0293 37.9357 47.1201L37.9467 47.1237C38.1942 47.2472 38.4671 47.3089 38.7474 47.3089H44.1087C44.3744 45.7731 45.7064 44.6511 47.2679 44.6475L47.2718 44.6511ZM53.9797 48.8446V48.841C53.5466 50.1554 52.3164 51.0449 50.9297 51.0485H47.2718C45.8851 51.0449 44.6585 50.1553 44.2218 48.841H38.7477C38.6203 48.841 38.4929 48.8338 38.3692 48.8192V54.77C38.3728 56.0844 39.4392 57.1518 40.7604 57.1554H57.4445C57.8303 57.1554 58.2089 57.0574 58.551 56.8758L59.0642 56.5127L59.1297 56.4474H59.1334C59.581 56.0044 59.8358 55.3981 59.8358 54.7627V48.8192C59.7084 48.8337 59.581 48.8374 59.4536 48.8374L53.9797 48.8446ZM50.9297 46.1833L47.2718 46.1797C46.351 46.1833 45.6012 46.9276 45.6012 47.8498C45.6012 47.9007 45.6012 47.9479 45.6084 47.9987C45.6885 48.8555 46.4055 49.5127 47.2718 49.5163H50.9334H50.9297C51.8542 49.5163 52.604 48.7684 52.604 47.8498C52.604 46.9276 51.8542 46.1796 50.9297 46.1796L50.9297 46.1833ZM48.7386 31.9363V28.135C48.724 23.5566 45.0079 19.8496 40.4219 19.8351H30.7297C26.1437 19.8496 22.4275 23.5566 22.413 28.135V44.9603V44.9567C22.4166 45.9623 23.2319 46.7793 24.2401 46.7829H27.13V32.6809C27.1228 32.474 27.1992 32.2707 27.3448 32.1218C27.4904 31.9729 27.6905 31.8894 27.898 31.8894C28.1055 31.8894 28.3057 31.9729 28.4512 32.1218C28.5968 32.2707 28.6733 32.474 28.666 32.6809V52.0474C31.5668 52.9079 34.5149 55.0319 37.525 58.7461L49.54 61.0444C49.5728 61.0517 49.6019 61.0589 49.6347 61.0698C50.2352 61.2659 50.7776 61.6145 51.207 62.0792L56.0005 58.6917H40.7615C38.5923 58.6881 36.838 56.9344 36.8306 54.7742V48.2425C36.6668 48.1263 36.5139 47.9992 36.372 47.8576C35.7423 47.2295 35.3856 46.3762 35.3856 45.4867V39.8627C35.3893 38.011 36.8925 36.5115 38.7487 36.5078H42.6177V35.1717C42.6213 33.3854 44.0699 31.9403 45.857 31.9367L48.7386 31.9363ZM44.1489 36.5039L54.0526 36.5075V35.1714C54.0453 34.2347 53.2846 33.4758 52.3456 33.4686H45.8561C44.9171 33.4758 44.1564 34.2347 44.1527 35.1714V36.5075L44.1489 36.5039ZM60.0504 57.6967L60.054 57.7004C59.8356 57.8964 59.5917 58.0671 59.3333 58.2123L51.9739 63.4188L51.9703 63.4152C52.0795 63.7674 52.1231 64.1341 52.1086 64.5008C52.0831 65.089 51.8793 65.6591 51.5299 66.131C50.9621 66.8536 50.1395 67.3219 49.2295 67.4454C49.164 67.4563 49.0985 67.4563 49.0366 67.4527L32.3227 65.9786C31.9114 65.9278 31.613 65.5611 31.6494 65.1508C31.6821 64.7369 32.0388 64.4283 32.4537 64.4501L49.0652 65.9132C49.5492 65.8443 49.9897 65.5974 50.299 65.2198C50.4701 64.9874 50.5647 64.7115 50.5756 64.4246C50.5902 64.116 50.521 63.811 50.3755 63.5351C50.3645 63.517 50.3536 63.4952 50.3427 63.4734C50.0879 63.0341 49.6766 62.7037 49.1962 62.5439L36.9594 60.1949C36.781 60.1622 36.6172 60.0605 36.5044 59.9153C33.4689 56.103 30.5608 54.0589 27.751 53.38C27.7255 53.3764 27.7 53.3691 27.6782 53.3618C24.8974 52.7119 22.1676 53.4054 19.4743 55.0501L12.8683 58.9714L16.0858 70.9532L19.0812 68.989C19.6854 68.5823 20.3696 68.3136 21.0903 68.212C21.7854 68.1176 22.4952 68.2083 23.1466 68.4734L36.7587 73.9704C38.4403 74.682 40.322 74.7546 42.0509 74.1773L52.8099 70.779C54.0546 70.405 55.1794 69.7116 56.0711 68.7675L65.6365 58.8882C66.248 58.2346 66.5428 57.3488 66.4518 56.4592C66.4008 56.1469 66.2662 55.8601 66.0587 55.6205C65.8549 55.3954 65.5892 55.2284 65.2944 55.1485C64.4245 54.9815 63.5292 55.1957 62.8303 55.733L60.0569 57.6937L60.0504 57.6967ZM41.3937 4.2958C38.6202 1.52914 34.2709 1.10075 31.0064 3.27552C27.7416 5.4503 26.475 9.62205 27.9746 13.2385C29.4778 16.8547 33.3322 18.9098 37.1794 18.1473C41.0301 17.3848 43.8036 14.0119 43.8036 10.0978C43.8073 7.92307 42.9369 5.83529 41.3937 4.2958ZM5.30942 54.8284L5.00004 54.9119C3.80254 55.2314 2.78348 56.0157 2.1647 57.0904C1.54231 58.1614 1.37125 59.4358 1.69154 60.634L5.64062 75.3308C5.6479 75.3526 5.65154 75.3708 5.65882 75.3925C5.98275 76.5653 6.75075 77.5637 7.80261 78.1773L7.84265 78.1991H7.83901C8.90541 78.8127 10.172 78.987 11.3622 78.6784C11.384 78.6711 11.4022 78.6675 11.4241 78.6602L11.7043 78.5876C12.8872 78.2681 13.8991 77.502 14.5214 76.4491C14.5287 76.4346 14.536 76.4237 14.5432 76.4091C15.1656 75.3381 15.3367 74.0637 15.0164 72.8655L11.0528 58.1315C10.7361 56.9479 9.96448 55.9385 8.90898 55.3177L8.86894 55.296C7.79528 54.6751 6.51418 54.5053 5.30942 54.8284Z"
+                                fill="black"></path>
+                        </svg>
+                        <h5 class="text-center mt-3">Preparation for important roles in
+                            corporate and entrepreneurial settings
+
+                        </h5>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <style>
+        .middle-feature-section {
+            background: #f7f9ff;
+        }
+
+        .feature-col .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        .feature-item h5 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 0;
+            color: #606060;
+        }
+
+        /* CLIPPED IMAGE */
+        .clipped-images {
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+            overflow: hidden;
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+        }
+
+        .clipped-images img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .feature-col .feature-item {
+                margin-bottom: 25px;
+            }
+        }
+    </style>
+
+
+    <!-- FAQ + CTA -->
+    <section class="py-1 mt-5">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-12">
+                    <h4 class="fs-1 text-center mb-3"><span class="text-primary-emphasis">FAQs</span>
+                    </h4>
+                    <div class="accordion" id="faqAcc">
+
+                        <!-- FAQ 1 (Open by default) -->
+                        <div class="accordion-item card mb-2 shadow-sm">
+                            <h2 class="accordion-header" id="f1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#fa1" aria-expanded="true" aria-controls="fa1">
+                                    Is Online MBA at Alliance available for students from non business backgrounds?
+                                </button>
+                            </h2>
+                            <div id="fa1" class="accordion-collapse collapse show" aria-labelledby="f1"
+                                data-bs-parent="#faqAcc">
+                                <div class="accordion-body">
+                                    Yes, graduates from any academic background can apply.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item card mb-2 shadow-sm">
+                            <h2 class="accordion-header" id="f2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#fa2" aria-expanded="false" aria-controls="fa2">
+                                    What is the required academic qualification for this course?
+                                </button>
+                            </h2>
+                            <div id="fa2" class="accordion-collapse collapse" aria-labelledby="f2"
+                                data-bs-parent="#faqAcc">
+                                <div class="accordion-body">
+                                    To be eligible you must have a bachelor’s degree with at least 50% marks (45% if
+                                    you're from SC/ST).
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item card mb-2 shadow-sm">
+                            <h2 class="accordion-header" id="f3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#fa3" aria-expanded="false" aria-controls="fa3">
+                                    Is an entrance exam compulsory for admission?
+                                </button>
+                            </h2>
+                            <div id="fa3" class="accordion-collapse collapse" aria-labelledby="f3"
+                                data-bs-parent="#faqAcc">
+                                <div class="accordion-body">
+                                    No entrance exam is required for Alliance Online MBA.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item card mb-2 shadow-sm">
+                            <h2 class="accordion-header" id="f4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#fa4" aria-expanded="false" aria-controls="fa4">
+                                    Is this a recognized and accredited programme?
+                                </button>
+                            </h2>
+                            <div id="fa4" class="accordion-collapse collapse" aria-labelledby="f4"
+                                data-bs-parent="#faqAcc">
+                                <div class="accordion-body">
+                                    Yes. Alliance University is NAAC A+ accredited, UGC-approved, and ranked by NIRF and
+                                    QS, ensuring top-tier academic credibility.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div class="accordion-item card mb-2 shadow-sm">
+                            <h2 class="accordion-header" id="f5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#fa5" aria-expanded="false" aria-controls="fa5">
+                                    Is work experience mandatory for this course?
+                                </button>
+                            </h2>
+                            <div id="fa5" class="accordion-collapse collapse" aria-labelledby="f5"
+                                data-bs-parent="#faqAcc">
+                                <div class="accordion-body">
+                                    Both experienced and fresh professionals are eligible for this programme.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <style>
+                        /* Card-style accordion */
+                        .accordion-button {
+                            color: #003a73;
+                            font-weight: 500;
+                            font-size: 18px;
+                        }
+
+                        .accordion-button.collapsed {
+                            color: #003a73;
+                        }
+
+                        .accordion-button:not(.collapsed) {
+                            background-color: #6d1b30;
+                            /* Active background */
+                            color: #fff;
+                        }
+
+                        .accordion-button::after {
+                            filter: invert(22%) sepia(99%) saturate(2153%) hue-rotate(190deg) brightness(91%) contrast(89%);
+                        }
+
+                        .accordion-button:not(.collapsed)::after {
+                            filter: invert(100%);
+                            /* white arrow when open */
+                            transform: rotate(180deg);
+                            transition: transform 0.3s ease, filter 0.3s ease;
+                        }
+
+                        .accordion-button:focus {
+                            box-shadow: none;
+                        }
+
+                        .card {
+                            border-radius: 10px;
+                        }
+
+                        .accordion-body {
+                            padding-left: 20px;
+                        }
+                    </style>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================Banner and footer section -->
+
+    <section class="mba-cta-section py-1 mt-5 mb-0">
+        <div class="container text-start">
+            <div class="cta-content p-3 p-md-5 rounded">
+                <h3 class="text-white mb-3 fw-normal">
+                    Lead the Way in Business and Management with an 
+                </h3>
+                <h2 class="text-white mb-4 fw-bold" style="border-radius: 11px;">
+                    Online MBA at Alliance University, Bangalore
+                </h2>
+                <button type="button" class="btn btn-apply fw-semibold">
+                    Apply Now!
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <style>
+
+        .mba-cta-section {
+            position: relative;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.789) 40%, rgba(255, 255, 255, 0) 100%), url('banner-footer.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Card content */
+        .cta-content {
+            display: inline-block;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 900px;
+            width: 90%;
+        }
+
+        /* Typography */
+        .cta-content h3 {
+            font-size: 1rem;
+        }
+
+        .cta-content h2 {
+            font-size: 1.8rem;
+        }
+
+        @media (min-width: 768px) {
+            .cta-content h3 {
+                font-size: 1.6rem;
+            }
+
+            .cta-content h2 {
+                font-size: 2.2rem;
+            }
+
+            .cta-content {
+                padding: 40px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .cta-content h3 {
+                font-size: 1.8rem;
+            }
+
+            .cta-content h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+
+
+
+    <!-- FOOTER -->
+<footer>
+    <div class="container g-0">
+        <div class="row gy-4 gx-8 align-items-center">
+
+
+            <!-- LEFT: FULL LOGO AREA -->
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <img src="https://allianceonline.edu.in/static/assets/images/au-logo.webp"
+                     class="footer-logo" alt="">
+            </div>
+
+            <!-- RIGHT: CONTENT -->
+            <div class="col-md-6">
+
+                <h6 class="text-white small mb-3">Contact</h6>
+
+                <p class="fs-6 mb-1">
+                    <i class="fa-solid fa-map-location-dot me-2"></i>
+                    Chikkahagade Cross, Chandapura - Anekal Main Road,
+                </p>
+
+                <p class="fs-6 mb-3">
+                    Anekal, Bengaluru – 562 106 Karnataka, India.
+                </p>
+
+                <p class="small mb-1" style="color:#cfe8ff;">
+                    <i class="fa-solid fa-at me-2"></i>
+                    info@allianceonline.edu.in
+                </p>
+
+                <p class="small mb-0" style="color:#cfe8ff;">
+                    <i class="fa-solid fa-phone me-2"></i>
+                    08031331495
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer-logo {
+    width: 100%;
+    max-width: 500px;     /* Increase to make it larger */
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+</style>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        // small interactions
+        document.getElementById('yr').textContent = new Date().getFullYear();
+
+        // entrance animations for hero buttons
+        window.addEventListener('load', function () {
+            document.querySelectorAll('.entrance').forEach((el, i) => {
+                el.style.animationDelay = (i * 120) + 'ms';
+                el.classList.add('visible');
+            });
+        });
+
+        // simple lead form (demo)
+        document.getElementById('leadForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = this.name.value || 'Applicant';
+            alert('Thanks, ' + name + '! Our admissions team will call you soon.');
+            this.reset();
+        });
+    </script>
+
+    <script>
+        $(".card-carousel").slick({
+            dots: false,
+            infinite: true,
+            speed: 600,
+            arrows: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            centerMode: true,
+            centerPadding: "0px",
+            autoplay: true,
+            autoplaySpeed: 3000,
+            pauseOnHover: true,
+            responsive: [
+                { breakpoint: 1200, settings: { slidesToShow: 3, centerMode: true } },
+                { breakpoint: 1024, settings: { slidesToShow: 2, centerMode: true } },
+                { breakpoint: 768, settings: { slidesToShow: 1, centerMode: false } },
+                { breakpoint: 480, settings: { slidesToShow: 1, centerMode: false, arrows: false } }
+            ]
+        });
+    </script>
+</body>
+
+</html>
