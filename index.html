@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Alliance University</title>
+    <title>Online MBA — Modern Landing</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -297,23 +297,18 @@
                 <!-- Left Content -->
                 <div class="col-lg-7">
                     <div class="hero-card">
-                        <small class="text-blur text-uppercase mb-1">Online MBA • 12–24 months</small>
-                        <h1 class="text-blur">Empower Your Success,
+                        <!-- <small class="text-blur text-uppercase mb-1">Online MBA • 12–24 months</small> -->
+                        <h1 class="">Empower Your Success,
                             Study MBA Online with
                             Alliance University
                         </h1>
-                        <p class="text-blur lead">
+                        <p class=" lead">
                             Unlock your Leadership Potential
                             with - a World Class MBA Degree
 
                         </p>
 
                         <div class="d-flex flex-wrap align-items-center gap-3 mb-3 blur-wrapper">
-                            <div class="d-flex gap-2">
-                                <button class="btn-brochure"><i class="fa-solid fa-file-arrow-down me-2"></i>Download
-                                    Brochure</button>
-                                <button class="btn-apply">Apply Now</button>
-                            </div>
 
                             <div class="d-none d-md-flex kpis gap-4">
                                 <div class="kpi">
@@ -326,24 +321,69 @@
                                     <i class="fa-solid fa-briefcase fa-lg text-primary"></i>
                                     <div class="ms-2">
                                         <div class="small text-white"> Degree Level</div>
-                                        <strong> Postgraduate
-
-                                        </strong>
+                                        <strong> Postgraduate </strong>
                                     </div>
                                 </div>
-                                <!-- <div class="kpi">
-                                    <i class="fa-solid fa-calendar-days fa-lg text-primary"></i>
-                                    <div class="ms-2">
-                                        <div class="small text-white">Duration</div><strong>12–24 mo</strong>
-                                    </div>
-                                </div> -->
                             </div>
+                            <div class="hero-badge">
+                                Admissions Open – Online MBA (Jan 2026 Batch)
+                            </div>
+
+
+                            <style>
+                                .hero-badge {
+                                    font-size: 1.1rem;
+                                    font-weight: 600;
+                                    color: #fff;
+                                    padding: 2px 12px;
+                                    border-radius: 50px;
+                                    position: relative;
+                                    display: inline-block;
+                                    background: #003a734f;
+                                    z-index: 2;
+                                }
+
+                                .hero-badge::before {
+                                    content: "";
+                                    position: absolute;
+                                    inset: -3px;
+                                    border-radius: 50px;
+                                    padding: 2px;
+                                    background: linear-gradient(0deg,
+                                            #ffffff,
+                                            #884c4c,
+                                            #ffffff);
+                                    background-size: 200% 200%;
+                                    animation: rotateBorder 3s linear infinite;
+                                    -webkit-mask:
+                                        linear-gradient(#fff 0 0) content-box,
+                                        linear-gradient(#fff 0 0);
+                                    -webkit-mask-composite: xor;
+                                    mask-composite: exclude;
+                                }
+
+                                @keyframes rotateBorder {
+                                    0% {
+                                        background-position: 0% 0%;
+                                    }
+
+                                    100% {
+                                        background-position: 200% 200%;
+                                    }
+                                }
+                            </style>
+                            <div class="d-flex gap-2">
+                                <button class="btn-brochure"><i class="fa-solid fa-file-arrow-down me-2"></i>Download
+                                    Brochure</button>
+                                <!-- <button class="btn-apply">Apply Now</button> -->
+                            </div>
+
                         </div>
 
-                        <ul class="list-inline mb-0 text-blur">
+                        <!-- <ul class="list-inline mb-0 text-blur">
                             <li class="list-inline-item small text-white me-4"><i class="fa-solid fa-scroll"></i>
                                 [ Download Brochure ]</li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
 
@@ -351,7 +391,7 @@
                 <div class="col-lg-5 col-md-5 mt-4 mt-lg-0">
                     <div class="searchForm p-4 rounded bg-white shadow-sm">
                         <h2 class="fw-bold text-center text-white fs-5 mb-4">
-                            Get Guidance for the 2025-26 Alliance University Online MBA Admission!
+                            Get Guidance for the Alliance University Online MBA Jan 2026 batch!
 
                         </h2>
                         <form action="#">
@@ -411,8 +451,7 @@
 
         /* HERO BACKGROUND */
         .hero {
-            padding: 64px 0;
-            background-image: url('https://cdn.pixabay.com/photo/2021/10/01/02/49/graduate-6671173_1280.jpg');
+            padding: 70px 24px;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -420,7 +459,17 @@
             clip-path: polygon(0% 0%, 100% 0, 100% 88%, 50% 100%, 0 89%);
             position: relative;
             z-index: 1;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.673) 20%, rgba(0, 0, 0, 0) 100%), url('https://cdn.pixabay.com/photo/2021/10/01/02/49/graduate-6671173_1280.jpg');
+
         }
+
+        /* Remove clip on mobile */
+        @media (max-width: 768px) {
+            .hero {
+                clip-path: none;
+            }
+        }
+
 
         /* Dark overlay */
         .hero::before {
@@ -439,7 +488,7 @@
             color: white;
             padding: 2rem;
             border-radius: 20px;
-            max-width: 600px;
+            max-width: 700px;
         }
 
         .hero-card h1 {
@@ -451,8 +500,8 @@
             position: relative;
             display: inline-block;
             padding: 0.25rem 0.5rem;
-            border-radius: 12px;
-            background: rgba(0, 58, 115, 0.25);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(10px);
             color: #fff;
             line-height: 1.3;
@@ -469,9 +518,9 @@
         }
 
         .btn-brochure {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.347);
             color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid rgb(59, 0, 0);
         }
 
         .btn-brochure:hover {
@@ -977,7 +1026,7 @@
         <h2 class="section-title mb-5 fs-1 mt-5">
             Online MBA at
             <span class="" style="color: #003a73;">Alliance University</span>
-            
+
         </h2>
 
         <p>The MBA program at Alliance Online is a comprehensive two-year postgraduate course designed to cultivate
@@ -1195,22 +1244,23 @@
 
             /* Smaller zig-zag on mobile */
             .col-6:nth-child(odd) .adv-card {
-                transform: translateY(-10px);
+                transform: translateY(-0px);
             }
 
             .col-6:nth-child(even) .adv-card {
-                transform: translateY(10px);
+                transform: translateY(0px);
             }
         }
-        body, html {
-    overflow-x: hidden !important;
-}
 
-.mba-cta-section {
-    width: 100%;
-    overflow: hidden !important;
-}
+        body,
+        html {
+            overflow-x: hidden !important;
+        }
 
+        .mba-cta-section {
+            width: 100%;
+            overflow: hidden !important;
+        }
     </style>
 
 
@@ -1454,7 +1504,7 @@
         }
     </style>
 
-    
+
     <section class="middle-feature-section py-1">
         <div class="container">
             <h2 class="section-title mb-5 fs-1 mt-1 text-center">
@@ -1717,7 +1767,7 @@
         <div class="container text-start">
             <div class="cta-content p-3 p-md-5 rounded">
                 <h3 class="text-white mb-3 fw-normal">
-                    Lead the Way in Business and Management with an 
+                    Lead the Way in Business and Management with an
                 </h3>
                 <h2 class="text-white mb-4 fw-bold" style="border-radius: 11px;">
                     Online MBA at Alliance University, Bangalore
@@ -1730,7 +1780,6 @@
     </section>
 
     <style>
-
         .mba-cta-section {
             position: relative;
             padding-top: 50px;
@@ -1787,57 +1836,57 @@
 
 
     <!-- FOOTER -->
-<footer>
-    <div class="container g-0">
-        <div class="row gy-4 gx-8 align-items-center">
+    <footer>
+        <div class="container g-0">
+            <div class="row gy-4 gx-8 align-items-center">
 
 
-            <!-- LEFT: FULL LOGO AREA -->
-            <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <img src="https://allianceonline.edu.in/static/assets/images/au-logo.webp"
-                     class="footer-logo" alt="">
+                <!-- LEFT: FULL LOGO AREA -->
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <img src="https://allianceonline.edu.in/static/assets/images/au-logo.webp" class="footer-logo"
+                        alt="">
+                </div>
+
+                <!-- RIGHT: CONTENT -->
+                <div class="col-md-6">
+
+                    <h6 class="text-white small mb-3">Contact</h6>
+
+                    <p class="fs-6 mb-1">
+                        <i class="fa-solid fa-map-location-dot me-2"></i>
+                        Chikkahagade Cross, Chandapura - Anekal Main Road,
+                    </p>
+
+                    <p class="fs-6 mb-3">
+                        Anekal, Bengaluru – 562 106 Karnataka, India.
+                    </p>
+
+                    <p class="small mb-1" style="color:#cfe8ff;">
+                        <i class="fa-solid fa-at me-2"></i>
+                        info@allianceonline.edu.in
+                    </p>
+
+                    <p class="small mb-0" style="color:#cfe8ff;">
+                        <i class="fa-solid fa-phone me-2"></i>
+                        08031331495
+                    </p>
+
+                </div>
+
             </div>
-
-            <!-- RIGHT: CONTENT -->
-            <div class="col-md-6">
-
-                <h6 class="text-white small mb-3">Contact</h6>
-
-                <p class="fs-6 mb-1">
-                    <i class="fa-solid fa-map-location-dot me-2"></i>
-                    Chikkahagade Cross, Chandapura - Anekal Main Road,
-                </p>
-
-                <p class="fs-6 mb-3">
-                    Anekal, Bengaluru – 562 106 Karnataka, India.
-                </p>
-
-                <p class="small mb-1" style="color:#cfe8ff;">
-                    <i class="fa-solid fa-at me-2"></i>
-                    info@allianceonline.edu.in
-                </p>
-
-                <p class="small mb-0" style="color:#cfe8ff;">
-                    <i class="fa-solid fa-phone me-2"></i>
-                    08031331495
-                </p>
-
-            </div>
-
         </div>
-    </div>
-</footer>
+    </footer>
 
-<style>
-    .footer-logo {
-    width: 100%;
-    max-width: 500px;     /* Increase to make it larger */
-    height: auto;
-    object-fit: contain;
-    display: block;
-}
-
-</style>
+    <style>
+        .footer-logo {
+            width: 100%;
+            max-width: 500px;
+            /* Increase to make it larger */
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+    </style>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery -->
@@ -1889,4 +1938,3 @@
 </body>
 
 </html>
-
