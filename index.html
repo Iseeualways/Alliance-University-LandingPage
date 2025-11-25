@@ -298,11 +298,11 @@
                 <div class="col-lg-7">
                     <div class="hero-card">
                         <!-- <small class="text-blur text-uppercase mb-1">Online MBA • 12–24 months</small> -->
-                        <h1 class="">Empower Your Success,
+                        <h1 class="mb-2">Empower Your Success,
                             Study MBA Online with
                             Alliance University
                         </h1>
-                        <p class=" lead">
+                        <p class=" lead mb-4">
                             Unlock your Leadership Potential
                             with - a World Class MBA Degree
 
@@ -310,29 +310,35 @@
 
                         <div class="d-flex flex-wrap align-items-center gap-3 mb-3 blur-wrapper">
 
-                            <div class="d-none d-md-flex kpis gap-4">
+                            <div class="d-none d-md-flex kpis gap-4 mb-3">
                                 <div class="kpi">
-                                    <i class="fa-solid fa-graduation-cap fa-lg text-primary"></i>
+                                    <i class="fa-solid fa-graduation-cap fa-lg text-warning"></i>
                                     <div class="ms-2">
                                         <div class="small text-white"> Duration</div><strong>2 Years</strong>
                                     </div>
                                 </div>
                                 <div class="kpi">
-                                    <i class="fa-solid fa-briefcase fa-lg text-primary"></i>
+                                    <i class="fa-solid fa-briefcase fa-lg text-warning"></i>
                                     <div class="ms-2">
                                         <div class="small text-white"> Degree Level</div>
                                         <strong> Postgraduate </strong>
                                     </div>
                                 </div>
                             </div>
-                            <div class="hero-badge">
+                            <div class="hero-badge mt-3 mb-3">
                                 Admissions Open – Online MBA (Jan 2026 Batch)
                             </div>
+                            <button class="btn request-btn"> Apply Now</button>
 
 
                             <style>
+                                .hero-card h1 {
+                                    font-size: 34px !important;
+                                    margin-bottom: 16px !important;
+                                }
+
                                 .hero-badge {
-                                    font-size: 1.1rem;
+                                    font-size: 1.3rem;
                                     font-weight: 600;
                                     color: #fff;
                                     padding: 2px 12px;
@@ -372,7 +378,7 @@
                                     }
                                 }
                             </style>
-                            <div class="d-flex gap-2">
+                            <div class="d-flex gap-2 ">
                                 <button class="btn-brochure"><i class="fa-solid fa-file-arrow-down me-2"></i>Download
                                     Brochure</button>
                                 <!-- <button class="btn-apply">Apply Now</button> -->
@@ -405,8 +411,6 @@
                                 </div>
                                 <input class="form-control ps-5" placeholder="Enter Phone Number" type="tel" required>
                             </div>
-                            <div class="mb-3"><input name="course" type="text" placeholder="College in mind"
-                                    class="form-control"></div>
                             <div class="mb-3"><input name="location" type="text" placeholder="Enter Location"
                                     class="form-control"></div>
                             <div class="mb-3 form-check">
@@ -518,9 +522,9 @@
         }
 
         .btn-brochure {
-            background-color: rgba(255, 255, 255, 0.347);
-            color: white;
-            border: 2px solid rgb(59, 0, 0);
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            /* border: 2px solid rgb(255, 255, 255); */
         }
 
         .btn-brochure:hover {
@@ -610,7 +614,252 @@
         }
     </style>
 
-    <h4 class="text-center fs-1 fst-italic">Electives</h4>
+    <section>
+        <div class="container text-center">
+            <h5>About</h5>
+            <h2 class="section-title  fs-1 text-center mt-0 mb-4">
+                <span class="" style="color: rgb(124, 10, 2);">Alliance University</span>, Bangalore
+            </h2>
+
+            <p>Alliance Ascent College is a constituent college of the prestigious Alliance University, Bangalore, which
+                holds the joint recognition of the UGC and AICTE. Alliance Ascent College, Bangalore, combines
+                world-class facilities and excellent training that helps students sharpen their humanistic and technical
+                skills throughout the academic year.<br>
+                <br>
+
+                The holistic approach towards the betterment of its students has contributed to Alliance Ascent College,
+                Bangalore rankings, and is one of the primary reasons that have helped the college to rank as the ‘Top
+                MBA College in Bangalore in 2014 & 2015’.
+            </p>
+        </div>
+    </section>
+
+
+
+
+    <!-- ======================================================================card swiper -->
+    <section>
+        <h2 class="section-title mb-5 fs-3 text-center mt-5 mb-5">
+            Rankings <span class="fst-italic" style="color: rgb(124, 10, 2);">&</span>
+            Accreditations</h2>
+
+        <div class="card-carousel mx-5">
+            <div class="card">
+                <img src="https://allianceonline.edu.in/static/assets/images/nirf.svg" alt="NIRF">
+                <h3>NIRF Ranking</h3>
+                <p>Recognized for academic excellence</p>
+            </div>
+            <div class="card">
+                <img src="https://allianceonline.edu.in/static/assets/images/ugc.svg" alt="UGC">
+                <h3>UGC Approved</h3>
+                <p>Approved by University Grants Commission ensuring quality standards</p>
+            </div>
+            <div class="card">
+                <img src="https://allianceonline.edu.in/static/assets/images/dsir.svg" alt="NAAC">
+                <h3>DSIR Recognition</h3>
+                <p>Recognized by Department of Scientific and Industrial Research for research excellence</p>
+            </div>
+            <div class="card">
+                <img src="https://allianceonline.edu.in/static/assets/images/naac.svg" alt="NIRF">
+                <h3>NAAC A+ Grade</h3>
+                <p>Accredited NAAC A+ grade by National Assessment and Accreditation council</p>
+            </div>
+            <div class="card">
+                <img src="https://allianceonline.edu.in/static/assets/images/wur.svg" class="img-fluid w-25" alt="NIRF">
+                <h3>World University Rankings</h3>
+                <p>Featured in International University rankings for global recognition</p>
+            </div>
+        </div>
+    </section>
+
+
+    <style>
+        .card-carousel {
+            margin-inline: 100px !important;
+        }
+
+        .card-carousel .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 150px;
+            /* fixed width */
+            height: 250px;
+            /* fixed height */
+            box-sizing: border-box;
+            margin: 0 10px;
+            /* gap between cards */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card img {
+            width: 60px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #800000;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+            flex-grow: 1;
+            /* make descriptions align properly */
+        }
+
+        .slick-prev,
+        .slick-next {
+            background: #ffffff;
+            border-radius: 50%;
+            width: 45px;
+            height: 42px;
+            z-index: 10;
+            border: 2px solid #800000;
+            margin-inline: -20px;
+        }
+
+        /* .slick-prev:hover,
+        .slick-next:hover {
+            background: #800000;
+            color: #fff;
+        } */
+
+        .slick-prev:before,
+        .slick-next:before {
+            color: #800000;
+            font-size: 26px;
+        }
+
+        /* Remove default Slick slide padding */
+        .slick-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ========================
+   RESPONSIVE DESIGN
+======================== */
+
+        /* --- Tablet (max-width: 992px) --- */
+        @media (max-width: 992px) {
+
+            .card-carousel {
+                margin-inline: 40px !important;
+            }
+
+            .card-carousel .card {
+                width: 140px;
+                height: 230px;
+                padding: 18px;
+            }
+
+            .card img {
+                width: 55px;
+            }
+
+            .slick-prev,
+            .slick-next {
+                width: 40px;
+                height: 38px;
+                margin-inline: -10px;
+            }
+
+            .slick-prev:before,
+            .slick-next:before {
+                font-size: 22px;
+            }
+        }
+
+        /* --- Mobile (max-width: 768px) --- */
+        @media (max-width: 768px) {
+
+            .card-carousel {
+                margin-inline: 10px !important;
+            }
+
+            .card-carousel .card {
+                width: 130px;
+                height: 210px;
+                padding: 15px;
+            }
+
+            .card img {
+                width: 45px;
+            }
+
+            .card h3 {
+                font-size: 16px;
+            }
+
+            .card p {
+                font-size: 13px;
+            }
+
+            .slick-prev,
+            .slick-next {
+                width: 32px;
+                height: 32px;
+                border-width: 1px;
+                margin-inline: -5px;
+            }
+
+            .slick-prev:before,
+            .slick-next:before {
+                font-size: 18px;
+            }
+        }
+
+        /* --- Extra Small Mobile (max-width: 480px) --- */
+        @media (max-width: 480px) {
+
+            .card-carousel .card {
+                width: 120px;
+                height: 200px;
+                padding: 12px;
+            }
+
+            .card img {
+                width: 40px;
+            }
+
+            .slick-prev,
+            .slick-next {
+                display: none;
+                /* optional: hide arrows on very small screens */
+            }
+        }
+    </style>
+
+
+    <!-- =================================================================content  -->
+
+    <div class="container  text-center mt-5 mb-5">
+        <h2 class="section-title  fs-1 mt-5">
+            Online MBA at
+            <span class="" style="color: rgb(124, 10, 2);">Alliance University</span>
+        </h2>
+        <h5 class="mb-4">( Best Distance MBA College in Karnataka )</h5>
+
+        <p>The MBA program at Alliance Online is a comprehensive two-year postgraduate course designed to cultivate
+            strategic thinking, mould leadership skills and enhance analytical skillset. Alliance’s online MBA offering
+            is designed to combine quality teaching with flexible financing, targeting working professionals and
+            budget-conscious students. It offers electives in areas such as Marketing, Finance, Human Resource
+            Management, Operations and Business Analytics. </p>
+    </div>
+
+
+
+    <h2 class="text-center section-title   fs-2 mt-5">
+        Electives
+    </h2>
+    <h4 class="text-center fs-1 "></h4>
     <section class="zigzag-section d-flex align-items-center justify-content-center">
         <div class="zigzag-line">
             <span><svg width="25" height="25" viewBox="0 0 17 18" xmlns="http://www.w3.org/2000/svg">
@@ -708,7 +957,7 @@
 
     <style>
         .zigzag-section {
-            min-height: 30vh;
+            min-height: 15vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -736,20 +985,7 @@
             transition: transform 0.3s ease;
         }
 
-        /* Zigzag effect */
-        .zigzag-line span:nth-child(odd) {
-            transform: translateY(-15px);
-        }
 
-        .zigzag-line span:nth-child(even) {
-            transform: translateY(15px);
-        }
-
-        /* SVG size adjustment */
-        .zigzag-line svg {
-            width: 20px;
-            height: 20px;
-        }
 
         /* RESPONSIVE BREAKPOINTS */
         @media (max-width: 991px) {
@@ -782,38 +1018,51 @@
         }
     </style>
 
-    <section class="eligibility">
-        <div class="container text-center text-white py-5">
-            <h4 class="fs-1 mb-5 fst-italic"> Eligibility</h4>
-
-            <!-- Eligibility Item -->
-            <div class="eligibility-item d-flex align-items-center gap-0 flex-wrap justify-content-center">
-                <div class="icon-wrap">
-                    <svg width="40" height="40" viewBox="0 0 48 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M19.0508 37.3148H10.4151C9.66514 37.3148 9.05664 37.9233 9.05664 38.6732C9.05664 39.4232 9.66514 40.0317 10.4151 40.0317H19.0508C19.8008 40.0317 20.4093 39.4232 20.4093 38.6732C20.4093 37.9233 19.8008 37.3148 19.0508 37.3148Z"
-                            fill="white"></path>
-                        <path
-                            d="M37.5849 23.6556H10.4151C9.66514 23.6556 9.05664 24.2641 9.05664 25.0141C9.05664 25.7676 9.66514 26.3726 10.4151 26.3726H37.5849C38.3349 26.3726 38.9434 25.7676 38.9434 25.0141C38.9434 24.2641 38.3349 23.6556 37.5849 23.6556Z"
-                            fill="white"></path>
-                        <path
-                            d="M37.5849 9.99988H10.4151C9.66514 9.99988 9.05664 10.6084 9.05664 11.3584C9.05664 12.1084 9.66514 12.7169 10.4151 12.7169H37.5849C38.3349 12.7169 38.9434 12.1084 38.9434 11.3584C38.9434 10.6084 38.3349 9.99988 37.5849 9.99988Z"
-                            fill="white"></path>
-                        <path
-                            d="M39.3962 0.94342H8.60377C3.85259 0.950495 0.00706415 4.79601 0 9.54719V49.3962C0.00707502 54.1474 3.85259 57.993 8.60377 58H39.3962C44.1474 57.9929 47.9929 54.1474 48 49.3962V9.54719C47.9929 4.79601 44.1474 0.950485 39.3962 0.94342ZM45.283 49.3962C45.2795 52.6474 42.6474 55.2795 39.3962 55.283H8.60377C5.35263 55.2795 2.72051 52.6474 2.71698 49.3962V9.54719C2.72052 6.29605 5.35263 3.66393 8.60377 3.6604H39.3962C42.6474 3.66394 45.2795 6.29605 45.283 9.54719V49.3962Z"
-                            fill="white"></path>
-                        <path
-                            d="M31.6037 32.7123C28.8018 32.7123 26.2794 34.3998 25.2075 36.9859C24.1355 39.572 24.7264 42.5472 26.7074 44.5283C28.685 46.5059 31.6603 47.1002 34.2463 46.0283C36.836 44.9564 38.52 42.4339 38.52 39.6356C38.5164 35.8148 35.4209 32.7193 31.6037 32.7123Z"
-                            fill="white"></path>
-                        <path
-                            d="M26.9553 47.0225V51.8763C26.9588 52.4034 27.2595 52.8811 27.7336 53.111C28.2006 53.3303 28.756 53.2667 29.1628 52.9483L31.6074 50.9919L34.0343 52.9483C34.2819 53.1287 34.5791 53.2313 34.8869 53.2348C35.092 53.2384 35.2972 53.1959 35.4847 53.111C35.9517 52.8775 36.2489 52.3999 36.2453 51.8763V47.0225C33.4046 48.8091 29.7927 48.8091 26.9553 47.0225Z"
-                            fill="white"></path>
-                    </svg>
+    <section class="eligibility container">
+        <div class="container text-center text-white py-1">
+            <div class="row">
+                <div class="col-lg-1 d-flex align-items-center gap-0 flex-wrap justify-content-center">
+                         <div class="icon-wrap">
+                            <svg width="40" height="40" viewBox="0 0 48 58" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19.0508 37.3148H10.4151C9.66514 37.3148 9.05664 37.9233 9.05664 38.6732C9.05664 39.4232 9.66514 40.0317 10.4151 40.0317H19.0508C19.8008 40.0317 20.4093 39.4232 20.4093 38.6732C20.4093 37.9233 19.8008 37.3148 19.0508 37.3148Z"
+                                    fill="white"></path>
+                                <path
+                                    d="M37.5849 23.6556H10.4151C9.66514 23.6556 9.05664 24.2641 9.05664 25.0141C9.05664 25.7676 9.66514 26.3726 10.4151 26.3726H37.5849C38.3349 26.3726 38.9434 25.7676 38.9434 25.0141C38.9434 24.2641 38.3349 23.6556 37.5849 23.6556Z"
+                                    fill="white"></path>
+                                <path
+                                    d="M37.5849 9.99988H10.4151C9.66514 9.99988 9.05664 10.6084 9.05664 11.3584C9.05664 12.1084 9.66514 12.7169 10.4151 12.7169H37.5849C38.3349 12.7169 38.9434 12.1084 38.9434 11.3584C38.9434 10.6084 38.3349 9.99988 37.5849 9.99988Z"
+                                    fill="white"></path>
+                                <path
+                                    d="M39.3962 0.94342H8.60377C3.85259 0.950495 0.00706415 4.79601 0 9.54719V49.3962C0.00707502 54.1474 3.85259 57.993 8.60377 58H39.3962C44.1474 57.9929 47.9929 54.1474 48 49.3962V9.54719C47.9929 4.79601 44.1474 0.950485 39.3962 0.94342ZM45.283 49.3962C45.2795 52.6474 42.6474 55.2795 39.3962 55.283H8.60377C5.35263 55.2795 2.72051 52.6474 2.71698 49.3962V9.54719C2.72052 6.29605 5.35263 3.66393 8.60377 3.6604H39.3962C42.6474 3.66394 45.2795 6.29605 45.283 9.54719V49.3962Z"
+                                    fill="white"></path>
+                                <path
+                                    d="M31.6037 32.7123C28.8018 32.7123 26.2794 34.3998 25.2075 36.9859C24.1355 39.572 24.7264 42.5472 26.7074 44.5283C28.685 46.5059 31.6603 47.1002 34.2463 46.0283C36.836 44.9564 38.52 42.4339 38.52 39.6356C38.5164 35.8148 35.4209 32.7193 31.6037 32.7123Z"
+                                    fill="white"></path>
+                                <path
+                                    d="M26.9553 47.0225V51.8763C26.9588 52.4034 27.2595 52.8811 27.7336 53.111C28.2006 53.3303 28.756 53.2667 29.1628 52.9483L31.6074 50.9919L34.0343 52.9483C34.2819 53.1287 34.5791 53.2313 34.8869 53.2348C35.092 53.2384 35.2972 53.1959 35.4847 53.111C35.9517 52.8775 36.2489 52.3999 36.2453 51.8763V47.0225C33.4046 48.8091 29.7927 48.8091 26.9553 47.0225Z"
+                                    fill="white"></path>
+                            </svg>
+                        </div>
                 </div>
-                <p class="mb-0 text-start text-md-center">
-                    Candidates with a Bachelor’s degree with a minimum of 50% marks (45% for SC/ST candidates) are
-                    eligible to apply.
-                </p>
+                <div class="col-lg-6">
+                    <h4 class="fs-1 mb-4 text-start mx-4">Eligibility</h4>
+
+                    <!-- Eligibility Item -->
+                    <div class="eligibility-item d-flex align-items-center gap-0 flex-wrap justify-content-center">
+                       
+                        <p class="mb-0 text-start mx-4 ">
+                            Candidates with a Bachelor’s degree with a minimum of 50% marks (45% for SC/ST candidates)
+                            are
+                            eligible to apply.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 d-flex align-items-center gap-0 flex-wrap justify-content-center">
+                    <button class="Eligibility-btn px-3 py-2 btn">Check Eligibility</button>
+                </div>
             </div>
 
         </div>
@@ -821,13 +1070,25 @@
 
 
     <style>
+        .Eligibility-btn:hover {
+            background-color: #6d1b30;
+        }
+
+        .Eligibility-btn {
+            background-color: #ffffff;
+            color: #6d1b30;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
         .eligibility {
-            background: #6d1b30;
-            padding: 40px 20px;
+            background: #003a73;
+            padding: 30px 20px;
         }
 
         .eligibility h4 {
             font-size: clamp(1.8rem, 5vw, 3rem);
+            margin-left: 92px !important;
         }
 
         .eligibility-item {
@@ -849,7 +1110,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid rgba(255, 255, 255, 0.7);
+            border: 2px solid #ffc107;
             border-radius: 50%;
             animation: pulseIcon 1.6s ease-in-out infinite;
             flex-shrink: 0;
@@ -858,17 +1119,17 @@
         @keyframes pulseIcon {
             0% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+                box-shadow: 0 0 0 0 #ffc107;
             }
 
             50% {
                 transform: scale(1.12);
-                box-shadow: 0 0 12px 3px rgba(255, 255, 255, 0.3);
+                box-shadow: 0 0 12px 3px #ffc1077c;
             }
 
             100% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+                box-shadow: 0 0 0 0 #ffc107;
             }
         }
 
@@ -919,122 +1180,9 @@
     </style>
 
 
-    <!-- ======================================================================card swiper -->
-
-    <h2 class="section-title mb-5 fs-1 text-center mt-5 mb-5">
-        Rankings <span class="fst-italic" style="color: #003a73;">&</span>
-        Accreditations</h2>
-
-    <div class="card-carousel m-5">
-        <div class="card">
-            <img src="https://allianceonline.edu.in/static/assets/images/nirf.svg" alt="NIRF">
-            <h3>NIRF Ranking</h3>
-            <p>Recognized for academic excellence</p>
-        </div>
-        <div class="card">
-            <img src="https://allianceonline.edu.in/static/assets/images/ugc.svg" alt="UGC">
-            <h3>UGC Approved</h3>
-            <p>Approved by University Grants Commission ensuring quality standards</p>
-        </div>
-        <div class="card">
-            <img src="https://allianceonline.edu.in/static/assets/images/dsir.svg" alt="NAAC">
-            <h3>DSIR Recognition</h3>
-            <p>Recognized by Department of Scientific and Industrial Research for research excellence</p>
-        </div>
-        <div class="card">
-            <img src="https://allianceonline.edu.in/static/assets/images/naac.svg" alt="NIRF">
-            <h3>NAAC A+ Grade</h3>
-            <p>Accredited NAAC A+ grade by National Assessment and Accreditation council</p>
-        </div>
-        <div class="card">
-            <img src="https://allianceonline.edu.in/static/assets/images/wur.svg" class="img-fluid w-25" alt="NIRF">
-            <h3>World University Rankings</h3>
-            <p>Featured in International University rankings for global recognition</p>
-        </div>
-    </div>
-
-    <style>
-        .card-carousel .card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            width: 150px;
-            /* fixed width */
-            height: 250px;
-            /* fixed height */
-            box-sizing: border-box;
-            margin: 0 10px;
-            /* gap between cards */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .card img {
-            width: 60px;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            font-size: 18px;
-            margin: 10px 0;
-            color: #800000;
-        }
-
-        .card p {
-            font-size: 14px;
-            color: #555;
-            flex-grow: 1;
-            /* make descriptions align properly */
-        }
-
-        .slick-prev,
-        .slick-next {
-            background: #ffffff;
-            border-radius: 50%;
-            width: 45px;
-            height: 42px;
-            z-index: 10;
-            border: 2px solid #800000;
-        }
-
-        /* .slick-prev:hover,
-        .slick-next:hover {
-            background: #800000;
-            color: #fff;
-        } */
-
-        .slick-prev:before,
-        .slick-next:before {
-            color: #800000;
-            font-size: 26px;
-        }
-
-        /* Remove default Slick slide padding */
-        .slick-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
 
 
-    <!-- =================================================================content  -->
 
-    <div class="container  text-center mt-5 mb-5">
-        <h2 class="section-title mb-5 fs-1 mt-5">
-            Online MBA at
-            <span class="" style="color: #003a73;">Alliance University</span>
-
-        </h2>
-
-        <p>The MBA program at Alliance Online is a comprehensive two-year postgraduate course designed to cultivate
-            strategic thinking, mould leadership skills and enhance analytical skillset. Alliance’s online MBA offering
-            is designed to combine quality teaching with flexible financing, targeting working professionals and
-            budget-conscious students. It offers electives in areas such as Marketing, Finance, Human Resource
-            Management, Operations and Business Analytics. </p>
-    </div>
 
 
     <section class="advantage-section py-5 mt-">
@@ -1169,7 +1317,7 @@
         .section-title {
             font-size: 2.2rem;
             font-weight: 700;
-            text-transform: uppercase;
+
         }
 
         .section-title span {
