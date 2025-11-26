@@ -232,10 +232,11 @@
                 <div class="navbar-nav align-items-center gap-3">
                     <a class="nav-link text-dark" href="#home">Home</a>
                     <a class="nav-link text-dark" href="#programs">About</a>
-                    <a class="nav-link text-dark" href="#curriculum">Eligibility</a>
-                    <a class="nav-link text-dark" href="#contact">Curriculum</a>
+                    <a class="nav-link text-dark" href="#curriculum">MBA at Alliance</a>
+                    <a class="nav-link text-dark" href="#contact">Outcomes </a>
                     <a class="nav-link text-dark" href="#faculty">Why Alliance</a>
                     <a class="nav-link text-dark" href="#contact">FAQs</a>
+                    <a class="nav-link text-dark" href="#contact">Contact</a>
                     <a class="btn btn-md request-btn" href="#contact">Request Info</a>
                 </div>
             </div>
@@ -446,6 +447,11 @@
                             </div>
                             <div class="mb-3"><input name="location" type="text" placeholder="Enter Location"
                                     class="form-control"></div>
+                            <div class="mb-3">
+                                <textarea name="Message" placeholder="Message (Optional)" class="form-control" rows="2"
+                                    required></textarea>
+                            </div>
+
                             <div class="mb-3 form-check">
                                 <input name="terms" type="checkbox" id="terms" class="form-check-input" required>
                                 <label class="form-check-label text-white" for="terms">
@@ -454,6 +460,7 @@
                                         Conditions</a>
                                 </label>
                             </div>
+
                             <div class="d-grid">
                                 <button type="submit" class="btn sub-btn">Submit</button>
                             </div>
@@ -1252,9 +1259,9 @@
 
     <section id="curriculum" class="py-5 bg-white">
         <div class="container">
-            <h2 class="section-title mb-5 text-center fs-3">
-                <span style="color: #7d0b03;">Alliance University Bangalore</span>
-                Online MBA<br> Semester-wise Curriculum
+            <h2 class="section-title mb-5 text-center fs-2">
+                <span style="color: #7d0b03;"></span>
+                Online MBA Semester-wise Curriculum
             </h2>
 
             <div class="accordion" id="curriculumAcc">
@@ -1637,7 +1644,7 @@
             flex-direction: column;
             justify-content: flex-start;
             margin: 20px;
-            transition: all 0.4s ease; 
+            transition: all 0.4s ease;
         }
 
         .feature-item:hover {
@@ -1694,47 +1701,54 @@
             margin-bottom: 10px;
             color: #580000;
         }
+
         /* ================================
    MOBILE RESPONSIVE FIXES
 ================================ */
-@media (max-width: 768px) {
+        @media (max-width: 768px) {
 
-    .feature-item {
-        height: auto;              /* remove fixed height */
-        padding: 20px;             /* reduce padding */
-        margin: 10px 0;            /* reduce spacing */
-        border-radius: 14px;
-    }
+            .feature-item {
+                height: auto;
+                /* remove fixed height */
+                padding: 20px;
+                /* reduce padding */
+                margin: 10px 0;
+                /* reduce spacing */
+                border-radius: 14px;
+            }
 
-    .feature-icon {
-        width: 55px;
-        height: 55px;
-        margin-bottom: 15px;
-    }
+            .feature-icon {
+                width: 55px;
+                height: 55px;
+                margin-bottom: 15px;
+            }
 
-    .feature-title,
-    .feature-item h5 {
-        font-size: 16px !important;   /* smaller heading */
-        margin-bottom: 8px;
-        text-align: center;
-    }
+            .feature-title,
+            .feature-item h5 {
+                font-size: 16px !important;
+                /* smaller heading */
+                margin-bottom: 8px;
+                text-align: center;
+            }
 
-    .feature-text {
-        font-size: 14px;          /* reduce paragraph size */
-        line-height: 1.5;
-        text-align: center;
-    }
+            .feature-text {
+                font-size: 14px;
+                /* reduce paragraph size */
+                line-height: 1.5;
+                text-align: center;
+            }
 
-    .feature-col {
-        padding: 0 10px;          /* reduce side spacing */
-    }
+            .feature-col {
+                padding: 0 10px;
+                /* reduce side spacing */
+            }
 
-    .feature-item svg {
-        width: 50px !important;   /* shrink SVG icons */
-        height: auto;
-    }
-}
-
+            .feature-item svg {
+                width: 50px !important;
+                /* shrink SVG icons */
+                height: auto;
+            }
+        }
     </style>
 
 
@@ -1964,8 +1978,8 @@
 
     <section class="advantage-section py-1">
         <div class="container text-center" style="max-width: 1500px !important;">
-            <h2 class="section-title  fs-1 mt-5">
-                Why Choose an Online MBA at <br>
+            <h2 class="section-title  fs-1 mt-5 pb-3">
+                Why Online MBA at
                 <span class="" style="color: rgb(124, 10, 2);">Alliance University Bangalore?</span>
             </h2>
 
@@ -2344,16 +2358,16 @@
 
     <!-- ==========================================================Banner and footer section -->
 
-    <section class="mba-cta-section py-1 mt-5 mb-0">
+    <section class="mba-cta-section py-5 mt-5 mb-0">
         <div class="container text-start">
             <div class="cta-content p-3 p-md-5 rounded">
                 <h3 class="text-white mb-3 fw-normal">
                     Lead the Way in Business and Management with an
                 </h3>
-                <h2 class="text-white mb-4 fw-bold" style="border-radius: 11px;">
-                    Online MBA at Alliance University Bangalore
+                <h2 class="text-white mb-5 fw-bold" style="border-radius: 11px;">
+                    Online MBA at Alliance University, Bangalore
                 </h2>
-                <button type="button" class="btn btn-apply fw-semibold">
+                <button type="button" class="btn btn-apply fw-semibold  fs-5">
                     Apply Now!
                 </button>
             </div>
@@ -2363,8 +2377,8 @@
     <style>
         .mba-cta-section {
             position: relative;
-            padding-top: 50px;
-            padding-bottom: 50px;
+            padding-top: 60px;
+            padding-bottom: 60px;
             background-image: linear-gradient(to right, rgba(0, 0, 0, 0.789) 40%, rgba(255, 255, 255, 0) 100%), url('banner-footer.jpg');
             background-size: cover;
             background-position: center;
@@ -2376,13 +2390,13 @@
             display: inline-block;
             padding: 20px;
             border-radius: 15px;
-            max-width: 900px;
+            max-width: 1200px;
             width: 90%;
         }
 
         /* Typography */
         .cta-content h3 {
-            font-size: 1rem;
+            font-size: 19px !important;
         }
 
         .cta-content h2 {
@@ -2417,57 +2431,69 @@
 
 
     <!-- FOOTER -->
-    <footer>
-        <div class="container g-0">
-            <div class="row gy-4 gx-8 align-items-center">
-
+    <footer class="bg-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
 
                 <!-- LEFT: FULL LOGO AREA -->
-                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <div class="col-md-6 d-flex justify-content-start">
                     <img src="https://allianceonline.edu.in/static/assets/images/au-logo.webp" class="footer-logo"
                         alt="">
                 </div>
 
                 <!-- RIGHT: CONTENT -->
-                <div class="col-md-6">
-
-                    <h6 class="text-white small mb-3">Contact</h6>
-
-                    <p class="fs-6 mb-1">
+                <div
+                    class="col-md-6 d-flex flex-column justify-content-start align-items-start text-start footer-right">
+                    <p class="mb-3">
                         <i class="fa-solid fa-map-location-dot me-2"></i>
-                        Chikkahagade Cross, Chandapura - Anekal Main Road,
+                        Central Campus, Chikkahadage Cross, Chandapura-Anekal
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main Road, Bengaluru, Karnataka - 562106
                     </p>
 
-                    <p class="fs-6 mb-3">
-                        Anekal, Bengaluru – 562 106 Karnataka, India.
+                    <!-- <p class="mb-3">
+                       Anekal, Bengaluru – 562 106 Karnataka, India.
+                    </p> -->
+
+                    <p class="small mb-3">
+                        <i class="fa-solid fa-envelope me-2"></i>
+                        alliance.college0@gmail.com
                     </p>
 
-                    <p class="small mb-1" style="color:#cfe8ff;">
-                        <i class="fa-solid fa-at me-2"></i>
-                        info@allianceonline.edu.in
-                    </p>
-
-                    <p class="small mb-0" style="color:#cfe8ff;">
+                    <p class="small mb-3">
                         <i class="fa-solid fa-phone me-2"></i>
-                        08031331495
+                        +91 9606878296
                     </p>
-
                 </div>
+
 
             </div>
         </div>
     </footer>
 
     <style>
+        .footer-right p {
+            font-size: 18px;
+            color: black !important;
+            font-family: "Poppins" !important;
+        }
+
         .footer-logo {
-            width: 100%;
-            max-width: 500px;
-            /* Increase to make it larger */
+            width: auto;
+            max-width: 400px;
+            /* adjust as needed */
             height: auto;
             object-fit: contain;
             display: block;
         }
+
+        footer p,
+        footer h6 {
+            margin: 0;
+            color: black;
+            /* optional: remove extra margin */
+        }
     </style>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery -->
