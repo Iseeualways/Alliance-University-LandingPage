@@ -4,230 +4,37 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Online MBA — Modern Landing</title>
+    <title>Alliance University Landing Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <!-- Slick CSS -->
-    <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgYtWlHk38nJNmPR9U1FVLtZL1YI7Di5urN6pN1Nsx3Rp3XIan+FJxux1DPZWS9Yuk3IYZxZ8YKw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-
-
-    <style>
-        /* *{
-            border: 1px solid red;
-        } */
-        p {
-            font-size: 18px !important;
-        }
-
-        :root {
-            --brand: rgb(124, 10, 2);
-            --soft: #f6f9fc;
-            --muted: #6c757d;
-            --radius: 14px;
-            --card-shadow: 0 10px 30px rgba(10, 30, 60, 0.06);
-        }
-
-        body {
-            font-family: "Poppins" !important;
-            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-            color: #0d1b2a;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            overflow-x: hidden !important;
-        }
-
-
-        /* Program cards */
-        .program-card {
-            border-radius: 16px;
-            overflow: hidden;
-            transition: transform .36s cubic-bezier(.12, .7, .2, 1), box-shadow .36s;
-            background: #fff;
-            border: 1px solid rgba(10, 30, 60, 0.03);
-        }
-
-        .program-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 18px 50px rgba(10, 30, 60, 0.06);
-        }
-
-        /* faculty */
-        .faculty-img {
-            width: 72px;
-            height: 72px;
-            object-fit: cover;
-            border-radius: 12px;
-            border: 3px solid #fff;
-            box-shadow: 0 6px 22px rgba(10, 30, 60, 0.06);
-        }
-
-        /* Testimonials */
-        .testimonial {
-            background: linear-gradient(180deg, #ffffff, #fbfdff);
-            border-radius: 14px;
-            padding: 18px;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-        }
-
-        /* FAQ */
-        .faq .accordion-button {
-            border-radius: 12px;
-            margin-bottom: 8px;
-            background: #fff;
-            box-shadow: var(--card-shadow);
-            border: 1px solid rgba(12, 30, 60, 0.04);
-        }
-
-        /* FOOTER */
-        footer {
-            padding: 40px 0;
-            background: #021026;
-            color: #cfe8ff;
-        }
-
-        /* ---------------------------
-       CUSTOM BUTTONS (two different)
-       Brochure (outline with border sweep)
-       Apply (filled with shine wipe)
-       --------------------------- */
-        .btn-brochure {
-            position: relative;
-            overflow: hidden;
-            border-radius: 50px;
-            padding: 8px 22px;
-            font-size: 0.92rem;
-            font-weight: 700;
-            transition: all .28s ease;
-            background: transparent;
-            border: 2px solid var(--brand);
-            color: var(--brand);
-            --btn-pad-y: 8px;
-        }
-
-        /* Outline button sweep - subtle line from center */
-        .btn-brochure::after {
-            content: "";
-            position: absolute;
-            width: 0%;
-            height: 3px;
-            left: 50%;
-            bottom: 6px;
-            transform: translateX(-50%);
-            background: var(--brand);
-            border-radius: 8px;
-            transition: width .36s cubic-bezier(.2, .9, .25, 1);
-            opacity: 0.95;
-        }
-
-        .btn-brochure:hover::after {
-            width: 78%;
-        }
-
-        .btn-brochure:focus {
-            box-shadow: 0 8px 28px rgba(0, 58, 115, 0.06);
-            outline: none;
-        }
-
-        /* Apply button (filled) */
-        .btn-apply {
-            position: relative;
-            overflow: hidden;
-            border-radius: 50px;
-            padding: 9px 24px;
-            font-size: 0.92rem;
-            font-weight: 700;
-            color: #fff;
-            background: var(--brand);
-            border: 2px solid var(--brand);
-            transition: transform .18s ease;
-        }
-
-        /* Shine wipe */
-        .btn-apply::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -120%;
-            width: 60%;
-            height: 100%;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.05));
-            transform: skewX(-18deg);
-            transition: all 0.6s cubic-bezier(.2, .9, .25, 1);
-            pointer-events: none;
-        }
-
-        .btn-apply:hover::before {
-            left: 140%;
-        }
-
-        .btn-apply:active {
-            transform: scale(.985);
-        }
-
-        /* Small entrance animation for CTAs */
-        .entrance {
-            opacity: 0;
-            transform: translateY(12px);
-            animation: enter .6s forwards cubic-bezier(.2, .9, .25, 1);
-        }
-
-        .entrance.delay-1 {
-            animation-delay: .12s;
-        }
-
-        .entrance.delay-2 {
-            animation-delay: .26s;
-        }
-
-        @keyframes enter {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* responsive tweaks */
-        @media (max-width:992px) {
-            .hero {
-                padding: 40px 0;
-            }
-        }
-
-        @media (max-width:576px) {
-            .kpi-stack {
-                gap: 10px;
-                flex-direction: column;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAV -->
+
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container d-flex align-items-center justify-content-between">
-            <!-- Brand Logo -->
             <a class="navbar-brand brand-logo" href="#">
                 <img src="https://allianceonline.edu.in/static/assets/images/au-logo.webp" class="img-fluid w-100"
                     alt="">
             </a>
 
-            <!-- Hamburger Toggler for Mobile -->
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
                 aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Menu Links -->
+
             <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
                 <div class="navbar-nav align-items-center gap-3">
                     <a class="nav-link text-dark" href="#home">Home</a>
@@ -243,64 +50,14 @@
         </div>
     </nav>
 
-    <style>
-        /* NAVBAR */
-        .navbar {
-            padding: 0.5rem 1.25rem;
-            backdrop-filter: blur(6px);
-            background: rgba(255, 255, 255, 0.6);
-            box-shadow: 0 6px 18px rgba(20, 30, 70, 0.03);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-            z-index: 999;
-        }
 
-        /* Brand */
-        .brand-logo img {
-            max-height: 50px;
-        }
-
-        /* Links */
-        .navbar-nav .nav-link {
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: var(--brand);
-        }
-
-        /* Button */
-        .request-btn {
-            border-color: var(--brand);
-            color: white;
-            background: var(--brand);
-            transition: 0.3s;
-            font-weight: 500;
-            transition: all .4 ease !important;
-        }
-
-        .request-btn:hover {
-            background: #ffffff !important;
-            color: #6d1b30;
-            border: 2px solid #6d1b30;
-            font-weight: 500;
-        }
-
-        /* Hamburger icon customization */
-        .navbar-toggler {
-            border: none;
-            outline: none;
-        }
-    </style>
-
-    <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
             <div class="row align-items-center g-4">
-                <!-- Left Content -->
+
                 <div class="col-lg-7">
                     <div class="hero-card">
-                        <!-- <small class="text-blur text-uppercase mb-1">Online MBA • 12–24 months</small> -->
+
                         <h1 class="mb-2">Empower Your Success,
                             Study MBA Online with
                             Alliance University
@@ -331,101 +88,15 @@
                                 Admissions Open – Online MBA (Jan 2026 Batch)
                             </div>
                             <button class="btn request-btn p-2"> Apply Now</button>
-
-
-                            <style>
-                                .hero-badge {
-                                    display: inline-block;
-                                    background: #fff;
-                                    color: #003a73;
-                                    padding: 8px 18px;
-                                    border-radius: 30px;
-                                    font-weight: 700;
-                                    font-size: 18px;
-                                    animation: softPulse 2.2s ease-in-out infinite;
-                                    border: 2px solid #003a73;
-                                }
-
-                                /* Smooth pulse animation */
-                                @keyframes softPulse {
-                                    0% {
-                                        transform: scale(1);
-                                        box-shadow: 0 0 0 0 rgba(0, 58, 115, 0.4);
-                                    }
-
-                                    50% {
-                                        transform: scale(1.05);
-                                        box-shadow: 0 0 15px 4px rgba(0, 58, 115, 0.25);
-                                    }
-
-                                    100% {
-                                        transform: scale(1);
-                                        box-shadow: 0 0 0 0 rgba(0, 58, 115, 0.4);
-                                    }
-                                }
-
-                                .hero-card h1 {
-                                    font-size: 34px !important;
-                                    margin-bottom: 16px !important;
-                                }
-
-                                .hero-badge {
-                                    font-size: 1.3rem;
-                                    font-weight: 600;
-                                    color: #fff;
-                                    padding: 2px 12px;
-                                    border-radius: 50px;
-                                    position: relative;
-                                    display: inline-block;
-                                    background: #003a734f;
-                                    z-index: 2;
-                                }
-
-                                .hero-badge::before {
-                                    content: "";
-                                    position: absolute;
-                                    inset: -3px;
-                                    border-radius: 50px;
-                                    padding: 2px;
-                                    background: linear-gradient(0deg,
-                                            #ffffff,
-                                            #884c4c,
-                                            #ffffff);
-                                    background-size: 200% 200%;
-                                    animation: rotateBorder 3s linear infinite;
-                                    -webkit-mask:
-                                        linear-gradient(#fff 0 0) content-box,
-                                        linear-gradient(#fff 0 0);
-                                    -webkit-mask-composite: xor;
-                                    mask-composite: exclude;
-                                }
-
-                                @keyframes rotateBorder {
-                                    0% {
-                                        background-position: 0% 0%;
-                                    }
-
-                                    100% {
-                                        background-position: 200% 200%;
-                                    }
-                                }
-                            </style>
                             <div class="d-flex gap-2 ">
                                 <button class="btn-brochure"><i class="fa-solid fa-file-arrow-down me-2"></i>Download
                                     Brochure</button>
-                                <!-- <button class="btn-apply">Apply Now</button> -->
                             </div>
-
                         </div>
-
-                        <!-- <ul class="list-inline mb-0 text-blur">
-                            <li class="list-inline-item small text-white me-4"><i class="fa-solid fa-scroll"></i>
-                                [ Download Brochure ]</li>
-                        </ul> -->
                     </div>
                 </div>
 
-                <!-- Right Form -->
+
                 <div class="col-lg-5 col-md-5 mt-4 mt-lg-0">
                     <div class="searchForm p-4 rounded bg-white shadow-sm">
                         <h2 class="fw-bold text-center text-white fs-5 mb-4">
@@ -471,205 +142,6 @@
             </div>
         </div>
     </section>
-
-    <style>
-        .sub-btn {
-            border: 3px solid rgb(124, 10, 2);
-            color: #ffffff;
-            font-weight: 600;
-            background-color: #6d1b2fc0;
-            transition: all 0.5s ease;
-        }
-
-        .sub-btn:hover {
-            border: 3px solid rgb(124, 10, 2);
-            color: #ffffff;
-            font-weight: 600;
-            background-color: #6d1b2fc0;
-            letter-spacing: 3px;
-        }
-
-        .text-primary-emphasis {
-            font-weight: 600;
-        }
-
-        /* HERO BACKGROUND */
-        .hero {
-            padding: 70px 24px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            margin-bottom: 40px;
-            clip-path: polygon(0% 0%, 100% 0, 100% 88%, 50% 100%, 0 89%);
-            position: relative;
-            z-index: 1;
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.673) 20%, rgba(0, 0, 0, 0) 100%), url('https://cdn.pixabay.com/photo/2021/10/01/02/49/graduate-6671173_1280.jpg');
-
-        }
-
-        /* Remove clip on mobile */
-        @media (max-width: 768px) {
-            .hero {
-                clip-path: none;
-            }
-        }
-
-
-        /* Dark overlay */
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.3);
-            /* Adjust darkness: 0.3 = light, 0.7 = darker */
-            z-index: -1;
-        }
-
-
-        /* HERO CARD - text only blurred */
-        .hero-card {
-            background: transparent;
-            color: white;
-            padding: 2rem;
-            border-radius: 20px;
-            max-width: 700px;
-        }
-
-        .hero-card h1 {
-            font-weight: 700;
-        }
-
-        /* Text blur / glass effect */
-        .text-blur {
-            position: relative;
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(10px);
-            color: #fff;
-            line-height: 1.3;
-            font-weight: 500;
-        }
-
-        /* Buttons */
-        .btn-brochure,
-        .btn-apply {
-            border-radius: 10px;
-            padding: 0.6rem 1.2rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-brochure {
-            background-color: rgb(255, 255, 255);
-            color: rgb(0, 0, 0);
-            /* border: 2px solid rgb(255, 255, 255); */
-        }
-
-        .btn-brochure:hover {
-            background-color: rgb(255, 255, 255);
-        }
-
-        .btn-apply {
-            background-color: rgb(124, 10, 2);
-            color: #ffffff;
-        }
-
-        .btn-apply:hover {
-            background-color: rgb(124, 10, 2);
-        }
-
-        /* KPI Boxes */
-        .kpis .kpi {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 12px;
-            padding: 12px 14px;
-            box-shadow: 0 6px 18px rgba(10, 30, 60, 0.05);
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        /* Form */
-        .searchForm {
-            background-color: #00274f59 !important;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .flag-box {
-            width: 40px;
-            height: 35px;
-            background: #f1f1f1;
-            position: absolute;
-            top: 0;
-            left: 0;
-            border-radius: 6px 0 0 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .flag {
-            width: 28px;
-            height: 20px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 2px;
-        }
-
-        /* Indian flag */
-        .flag.in {
-            background-image: url('https://flagcdn.com/in.svg');
-        }
-
-
-        .submitBtn {
-            height: 45px;
-            font-size: 16px;
-            font-weight: 600;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 991px) {
-            .hero {
-                padding: 40px 0;
-            }
-
-            .text-blur {
-                display: block;
-                padding: 0.4rem 0.6rem;
-                margin-bottom: 0.5rem;
-            }
-
-            .kpis {
-                justify-content: flex-start;
-                flex-wrap: wrap;
-            }
-        }
-
-        @media (max-width: 575px) {
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-
-            .lead {
-                font-size: 0.95rem;
-            }
-
-            .hero-badge {
-                padding: 10px;
-                font-size: 18px;
-            }
-
-            .btn-brochure,
-            .btn-apply {
-                width: 100%;
-                text-align: center;
-            }
-        }
-    </style>
 
     <section>
         <div class="container text-center">
@@ -735,172 +207,6 @@
             </div>
         </div>
     </section>
-
-
-    <style>
-        .card-carousel {
-            margin-inline: 100px !important;
-        }
-
-        .card-carousel .card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            width: 150px;
-            /* fixed width */
-            height: 250px;
-            /* fixed height */
-            box-sizing: border-box;
-            margin: 0 10px;
-            /* gap between cards */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .card img {
-            width: 90px;
-
-        }
-
-        .card h3 {
-            font-size: 18px;
-            margin: 10px 0;
-            color: #800000;
-        }
-
-        .card p {
-            font-size: 14px;
-            color: #555;
-            flex-grow: 1;
-            /* make descriptions align properly */
-        }
-
-        .slick-prev,
-        .slick-next {
-            background: #ffffff;
-            border-radius: 50%;
-            width: 45px;
-            height: 42px;
-            z-index: 10;
-            border: 2px solid #800000;
-            margin-inline: -20px;
-        }
-
-        /* .slick-prev:hover,
-        .slick-next:hover {
-            background: #800000;
-            color: #fff;
-        } */
-
-        .slick-prev:before,
-        .slick-next:before {
-            color: #800000;
-            font-size: 26px;
-        }
-
-        /* Remove default Slick slide padding */
-        .slick-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* ========================
-   RESPONSIVE DESIGN
-======================== */
-
-        /* --- Tablet (max-width: 992px) --- */
-        @media (max-width: 992px) {
-
-            .card-carousel {
-                margin-inline: 40px !important;
-            }
-
-            .card-carousel .card {
-                width: 140px;
-                height: 230px;
-                padding: 18px;
-            }
-
-            .card img {
-                width: 55px;
-            }
-
-            .slick-prev,
-            .slick-next {
-                width: 40px;
-                height: 38px;
-                margin-inline: -10px;
-            }
-
-            .slick-prev:before,
-            .slick-next:before {
-                font-size: 22px;
-            }
-        }
-
-        /* --- Mobile (max-width: 768px) --- */
-        @media (max-width: 768px) {
-
-            .card-carousel {
-                margin-inline: 10px !important;
-            }
-
-            .card-carousel .card {
-                width: 130px;
-                height: 210px;
-                padding: 15px;
-            }
-
-            .card img {
-                width: 45px;
-            }
-
-            .card h3 {
-                font-size: 16px;
-            }
-
-            .card p {
-                font-size: 13px;
-            }
-
-            .slick-prev,
-            .slick-next {
-                width: 32px;
-                height: 32px;
-                border-width: 1px;
-                margin-inline: -5px;
-            }
-
-            .slick-prev:before,
-            .slick-next:before {
-                font-size: 18px;
-            }
-        }
-
-        /* --- Extra Small Mobile (max-width: 480px) --- */
-        @media (max-width: 480px) {
-
-            .card-carousel .card {
-                width: 120px;
-                height: 200px;
-                padding: 12px;
-            }
-
-            .card img {
-                width: 40px;
-            }
-
-            .slick-prev,
-            .slick-next {
-                display: none;
-                /* optional: hide arrows on very small screens */
-            }
-        }
-    </style>
-
 
     <!-- =================================================================content  -->
 
@@ -1009,86 +315,9 @@
                     <path d="M2 1h13" stroke="#ffffff" stroke-opacity="0.18" />
                 </svg>
                 Business Analytics & AI</span>
-            <!-- <span><svg width="25" height="25" viewBox="0 0 17 18" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="flagGrad" x1="0" y1="0" x2="17" y2="18" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#003366" />
-                            <stop offset="1" stop-color="#004b99" />
-                        </linearGradient>
-                    </defs>
-
-                  
-                    <path d="M2 1h13v14l-6.5-3.5L2 15V1Z" fill="none" stroke="url(#flagGrad)" stroke-width="2"
-                        stroke-linejoin="round" />
-                </svg>
-
-                Success</span> -->
         </div>
     </section>
 
-
-    <style>
-        .zigzag-section {
-            min-height: 15vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow-x: auto;
-            /* allow horizontal scroll on very small screens */
-            padding: 1rem 0;
-        }
-
-        .zigzag-line {
-            display: flex;
-            gap: 50px;
-            flex-wrap: wrap;
-            /* wrap on smaller screens */
-            justify-content: center;
-        }
-
-        .zigzag-line span {
-            font-size: 22px;
-            font-weight: 400;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            white-space: nowrap;
-            /* prevent text from breaking mid-word */
-            transition: transform 0.3s ease;
-        }
-
-
-
-        /* RESPONSIVE BREAKPOINTS */
-        @media (max-width: 991px) {
-            .zigzag-line span {
-                font-size: 18px;
-                gap: 0.4rem;
-            }
-
-            .zigzag-line {
-                gap: 30px;
-            }
-        }
-
-        @media (max-width: 575px) {
-            .zigzag-line span {
-                font-size: 16px;
-                transform: none !important;
-                /* remove zigzag on tiny screens */
-            }
-
-            .zigzag-line {
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-
-            .zigzag-line svg {
-                width: 16px;
-                height: 16px;
-            }
-        }
-    </style>
 
     <section class="eligibility container">
         <div class="container text-center text-white py-1">
@@ -1138,124 +367,6 @@
 
         </div>
     </section>
-
-
-    <style>
-        .Eligibility-btn:hover {
-            background-color: #6d1b30;
-        }
-
-        .Eligibility-btn {
-            background-color: #ffffff;
-            color: #6d1b30;
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        .eligibility {
-            background: #003a73;
-            padding: 30px 20px;
-        }
-
-        .eligibility h4 {
-            font-size: clamp(1.8rem, 5vw, 3rem);
-            margin-left: 92px !important;
-        }
-
-        .eligibility-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            max-width: 900px;
-            /* limit width */
-            margin: 0 auto;
-            /* center horizontally */
-            text-align: left;
-            flex-wrap: wrap;
-            /* wrap for small screens */
-        }
-
-        .icon-wrap {
-            width: 68px;
-            height: 68px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #ffc107;
-            border-radius: 50%;
-            animation: pulseIcon 1.6s ease-in-out infinite;
-            flex-shrink: 0;
-        }
-
-        @keyframes pulseIcon {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 #ffc107;
-            }
-
-            50% {
-                transform: scale(1.12);
-                box-shadow: 0 0 12px 3px #ffc1077c;
-            }
-
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 #ffc107;
-            }
-        }
-
-        .eligibility-item p {
-            line-height: 1.4;
-            flex: 1;
-            /* make text take remaining space */
-            min-width: 200px;
-            /* prevent text from getting too narrow */
-        }
-
-        .eligibility svg {
-            flex-shrink: 0;
-        }
-
-        /* RESPONSIVE BREAKPOINTS */
-        @media (max-width: 768px) {
-            .eligibility-item {
-                gap: 15px;
-            }
-
-            .icon-wrap {
-                width: 50px;
-                height: 50px;
-                margin-bottom: 10px;
-            }
-
-            .eligibility svg {
-                width: 20px;
-                height: 20px;
-
-            }
-        }
-
-        @media (max-width: 576px) {
-            .eligibility h4 {
-                font-size: 1.8rem;
-            }
-
-            .eligibility-item {
-                flex-direction: column;
-                text-align: center;
-                gap: 12px;
-            }
-
-            .eligibility-item p {
-                min-width: unset;
-
-            }
-        }
-    </style>
-
-
-
-
 
     <section id="curriculum" class="py-5 bg-white">
         <div class="container">
@@ -1436,64 +547,6 @@
         </div>
     </section>
 
-    <style>
-        /* Active (expanded) accordion background */
-        .accordion-button:not(.collapsed) {
-            background-color: #8a0d1c;
-            /* change this to your desired color */
-            color: #ffffff;
-            /* optional: text color for active */
-        }
-
-        /* Optional: keep the right arrow icon same color */
-        .accordion-button:not(.collapsed)::after {
-            filter: invert(29%) sepia(88%) saturate(3767%) hue-rotate(196deg) brightness(92%) contrast(90%);
-        }
-
-        .accordion-button {
-            color: #003a73;
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .accordion-button.collapsed {
-            color: #003a73;
-
-
-        }
-
-        /* Collapsed arrow (blue #003a73) */
-        .accordion-button.collapsed::after {
-            filter: invert(22%) sepia(99%) saturate(2153%) hue-rotate(190deg) brightness(91%) contrast(89%);
-        }
-
-        /* Expanded arrow (white) */
-        .accordion-button:not(.collapsed)::after {
-            filter: invert(100%);
-            /* white */
-            transform: rotate(180deg);
-            transition: transform 0.3s ease, filter 0.3s ease;
-        }
-
-        .accordion-button:focus {
-            box-shadow: none;
-        }
-
-        .text-primary {
-            color: #003a73 !important;
-        }
-
-        .accordion-body ul {
-            padding-left: 20px;
-        }
-
-        .accordion-body ul li {
-            padding: 3px 0;
-            line-height: 1.5;
-        }
-    </style>
-
-
 
 
     <section class="middle-feature-section py-1">
@@ -1543,9 +596,7 @@
                                     fill="black"></path>
                             </svg>
                         </div>
-
                         <h5 class="feature-title">Nurture Managerial and Leadership Skills</h5>
-
                         <p class="feature-text">
                             Alliance University Bangalore online MBA focuses on the holistic development of leadership
                             and managerial capabilities. Through interactive lectures, group projects, and corporate
@@ -1556,19 +607,9 @@
                             conducts regular workshops, role plays, and industry networking offer insights into
                             real-world leadership challenges. Personalized feedback and support cultivate
                             self-confidence and adaptability, essential traits for thriving in dynamic workplaces.
-
                         </p>
                     </div>
-
                 </div>
-
-                <!-- CENTER IMAGE WITH CLIP-PATH -->
-                <!-- <div class="col-md-4 my-4 my-md-0 text-center">
-                    <div class="clipped-images">
-                        <img src="https://cdn.pixabay.com/photo/2023/11/06/14/44/ai-generated-8369771_960_720.png"
-                            alt="">
-                    </div>
-                </div> -->
 
                 <!-- RIGHT FEATURES -->
                 <div class="col-md-6 text-center text-md-start feature-col">
@@ -1598,7 +639,6 @@
                         </p>
                     </div>
 
-
                     <div class="feature-item p-4">
                         <div class="feature-icon">
                             <svg width="68" height="81" viewBox="0 0 68 81" fill="none"
@@ -1608,9 +648,7 @@
                                     fill="black"></path>
                             </svg>
                         </div>
-
                         <h5 class="feature-title">Preparation for Important Roles</h5>
-
                         <p class="feature-text">
                             The Alliance University online MBA equips students for leadership in both established
                             organizations and new ventures. The curriculum blends foundational business theory with
@@ -1624,134 +662,10 @@
 
                         </p>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
     </section>
-    <style>
-        .feature-item {
-            border: 2px solid rgba(89, 0, 0, 0.253);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            background: #ffffff;
-            height: 500px;
-            /* ensures equal height inside Bootstrap columns */
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            margin: 20px;
-            transition: all 0.4s ease;
-        }
-
-        .feature-item:hover {
-            border: 2px solid rgba(69, 0, 0, 0.87);
-        }
-
-        /* ICON BOX */
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 12px;
-            background: rgba(0, 38, 104, 0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-        }
-
-        /* TITLE */
-        .feature-title {
-            font-weight: 600;
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        /* DESCRIPTION */
-        .feature-text {
-            font-size: 15px;
-            line-height: 1.6;
-            color: #444;
-            flex-grow: 1;
-            /* fills remaining height so cards stay equal */
-        }
-
-
-        .middle-feature-section {
-            background: #f7f9ff;
-        }
-
-        .feature-col .feature-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .feature-col p {
-            font-size: 16px !important;
-            text-align: center;
-        }
-
-        .feature-item h5 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #580000;
-        }
-
-        /* ================================
-   MOBILE RESPONSIVE FIXES
-================================ */
-        @media (max-width: 768px) {
-
-            .feature-item {
-                height: auto;
-                /* remove fixed height */
-                padding: 20px;
-                /* reduce padding */
-                margin: 10px 0;
-                /* reduce spacing */
-                border-radius: 14px;
-            }
-
-            .feature-icon {
-                width: 55px;
-                height: 55px;
-                margin-bottom: 15px;
-            }
-
-            .feature-title,
-            .feature-item h5 {
-                font-size: 16px !important;
-                /* smaller heading */
-                margin-bottom: 8px;
-                text-align: center;
-            }
-
-            .feature-text {
-                font-size: 14px;
-                /* reduce paragraph size */
-                line-height: 1.5;
-                text-align: center;
-            }
-
-            .feature-col {
-                padding: 0 10px;
-                /* reduce side spacing */
-            }
-
-            .feature-item svg {
-                width: 50px !important;
-                /* shrink SVG icons */
-                height: auto;
-            }
-        }
-    </style>
-
-
 
 
     <!--========================================================================== table section -->
@@ -1823,156 +737,6 @@
             </div>
         </div>
     </section>
-
-    <style>
-        /* =========================
-   SCROLL WRAPPER (MOBILE)
-   ========================= */
-        .career-scroll-wrapper {
-            width: 100%;
-            overflow-x: auto;
-            overflow-y: hidden;
-            -webkit-overflow-scrolling: touch;
-            padding-bottom: 8px;
-        }
-
-        /* Smooth bottom scrollbar style (optional) */
-        .career-scroll-wrapper::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .career-scroll-wrapper::-webkit-scrollbar-thumb {
-            background: rgba(0, 0, 0, 0.15);
-            border-radius: 6px;
-        }
-
-        /* =========================
-   TABLE BASE
-   ========================= */
-        .career-table {
-            min-width: 950px;
-            /* ensures full table visible on scroll */
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            overflow: hidden;
-        }
-
-        /* Each row = perfect grid */
-        .career-row {
-            display: grid;
-            grid-template-columns: 220px 1fr 1fr 1fr;
-            /* fixed first col, equal others */
-            border-bottom: 1px solid #e6e6e6;
-            align-items: center;
-        }
-
-        .career-row:last-child {
-            border-bottom: none;
-        }
-
-        /* =========================
-   TABLE CELLS
-   ========================= */
-        .career-col {
-            padding: 16px 18px;
-            font-size: 15px;
-            line-height: 1.5;
-            border-right: 1px solid #e6e6e6;
-            color: #222;
-            white-space: normal !important;
-            word-break: break-word;
-        }
-
-        .career-col:last-child {
-            border-right: none;
-        }
-
-        .career-col.title {
-            background: #7e1f22;
-            color: #fff;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: .5px;
-            font-size: 15px;
-            padding: 16px 18px !important;
-            /* EXACT SAME as normal cells */
-            display: flex;
-            align-items: center;
-            /* vertically centers text */
-        }
-
-        .career-row {
-            align-items: stretch !important;
-        }
-
-        .career-col,
-        .career-col.title {
-            padding: 16px 18px !important;
-            line-height: 1.4;
-        }
-
-
-        /* HEADER */
-        .career-header .career-col {
-            background: #f5f5f5;
-            font-weight: 700;
-        }
-
-        /* Override header first column (blue) */
-        .career-header .career-col:first-child {
-            background: rgb(0, 36, 84);
-            color: #fff;
-        }
-
-        /* =========================
-   MOBILE RESPONSIVE
-   ========================= */
-        @media (max-width: 768px) {
-            .career-table {
-                min-width: 820px;
-                /* narrower scroll for smaller screens */
-            }
-
-            .career-row {
-                grid-template-columns: 180px 1fr 1fr 1fr;
-            }
-
-            .career-col {
-                padding: 12px 14px;
-                font-size: 14px;
-            }
-
-            .career-col.title {
-                padding: 12px 14px;
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .career-table {
-                min-width: 700px;
-            }
-
-            .career-row {
-                grid-template-columns: 150px 1fr 1fr 1fr;
-            }
-
-            .career-col {
-                padding: 10px 12px;
-                font-size: 13px;
-            }
-
-            .career-col.title {
-                font-size: 13px;
-            }
-        }
-    </style>
-
-
-
-
-
-
 
 
 
@@ -2101,111 +865,6 @@
     </section>
 
 
-    <style>
-        .advantage-section {
-            background: #ffffff;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-
-        }
-
-        .section-title span {
-            color: #0a1a3a;
-        }
-
-        .adv-card {
-            background: #ffffff;
-            padding: 15px 1px;
-            border-radius: 18px;
-            transition: 0.3s ease;
-            height: 100%;
-            box-shadow: none !important;
-        }
-
-        /* REMOVE SHADOW COMPLETELY */
-        .adv-card:hover {
-            transform: translateY(-5px);
-            box-shadow: none !important;
-        }
-
-        .adv-icon {
-            width: 70px;
-            height: 70px;
-
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 15px;
-            font-size: 28px;
-        }
-
-        /* ZIG-ZAG UP/DOWN */
-        .col-6:nth-child(odd) .adv-card {
-            transform: translateY(-40px);
-        }
-
-        .col-6:nth-child(even) .adv-card {
-            transform: translateY(40px);
-        }
-
-        /* Hover override so it still slightly animates */
-        .adv-card:hover {
-            transform: translateY(-5px) !important;
-        }
-
-        .adv-title {
-            font-weight: 700;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-            color: #6d1b30;
-        }
-
-        .adv-text {
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        /* Responsive */
-        @media (max-width: 576px) {
-            .section-title {
-                font-size: 1.6rem;
-            }
-
-            .adv-icon {
-                width: 55px;
-                height: 55px;
-                font-size: 22px;
-            }
-
-            /* Smaller zig-zag on mobile */
-            .col-6:nth-child(odd) .adv-card {
-                transform: translateY(-0px);
-            }
-
-            .col-6:nth-child(even) .adv-card {
-                transform: translateY(0px);
-            }
-        }
-
-        body,
-        html {
-            overflow-x: hidden !important;
-        }
-
-        .mba-cta-section {
-            width: 100%;
-            overflow: hidden !important;
-        }
-    </style>
-
-
-
-
 
     <!-- FAQ + CTA -->
     <section class="py-1 mt-5">
@@ -2306,51 +965,7 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
-                    <style>
-                        /* Card-style accordion */
-                        .accordion-button {
-                            color: #003a73;
-                            font-weight: 500;
-                            font-size: 18px;
-                        }
-
-                        .accordion-button.collapsed {
-                            color: #003a73;
-                        }
-
-                        .accordion-button:not(.collapsed) {
-                            background-color: #6d1b30;
-                            /* Active background */
-                            color: #fff;
-                        }
-
-                        .accordion-button::after {
-                            filter: invert(22%) sepia(99%) saturate(2153%) hue-rotate(190deg) brightness(91%) contrast(89%);
-                        }
-
-                        .accordion-button:not(.collapsed)::after {
-                            filter: invert(100%);
-                            /* white arrow when open */
-                            transform: rotate(180deg);
-                            transition: transform 0.3s ease, filter 0.3s ease;
-                        }
-
-                        .accordion-button:focus {
-                            box-shadow: none;
-                        }
-
-                        .card {
-                            border-radius: 10px;
-                        }
-
-                        .accordion-body {
-                            padding-left: 20px;
-                        }
-                    </style>
-
                 </div>
             </div>
         </div>
@@ -2373,62 +988,6 @@
             </div>
         </div>
     </section>
-
-    <style>
-        .mba-cta-section {
-            position: relative;
-            padding-top: 60px;
-            padding-bottom: 60px;
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.789) 40%, rgba(255, 255, 255, 0) 100%), url('banner-footer.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        /* Card content */
-        .cta-content {
-            display: inline-block;
-            padding: 20px;
-            border-radius: 15px;
-            max-width: 1200px;
-            width: 90%;
-        }
-
-        /* Typography */
-        .cta-content h3 {
-            font-size: 19px !important;
-        }
-
-        .cta-content h2 {
-            font-size: 1.8rem;
-        }
-
-        @media (min-width: 768px) {
-            .cta-content h3 {
-                font-size: 1.6rem;
-            }
-
-            .cta-content h2 {
-                font-size: 2.2rem;
-            }
-
-            .cta-content {
-                padding: 40px;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .cta-content h3 {
-                font-size: 1.8rem;
-            }
-
-            .cta-content h2 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
-
-
 
     <!-- FOOTER -->
     <footer class="bg-white py-4">
@@ -2470,35 +1029,11 @@
         </div>
     </footer>
 
-    <style>
-        .footer-right p {
-            font-size: 18px;
-            color: black !important;
-            font-family: "Poppins" !important;
-        }
 
-        .footer-logo {
-            width: auto;
-            max-width: 400px;
-            /* adjust as needed */
-            height: auto;
-            object-fit: contain;
-            display: block;
-        }
-
-        footer p,
-        footer h6 {
-            margin: 0;
-            color: black;
-            /* optional: remove extra margin */
-        }
-    </style>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Slick JS -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
         // small interactions
